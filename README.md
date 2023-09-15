@@ -1,27 +1,17 @@
-# Portfolio
+# Portfolio de Thomas AMBROISE
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
+Bienvenue ! Je suis Thomas AMBROISE, étudiant en 2ème année de BUT Informatique à l'IUT de Nantes. Ce portfolio est un moyen de présenter mes compétences, mes projets ainsi que moi-même.
 
-## Development server
+>Pour aller voir mon portfolio c'est [ici](https://thomas-ambroise.fr) !
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Objectif
 
-## Code scaffolding
+Tout d'abord, ce projet me permet de développer mes connaissances du framework Angular et du développement axé sur l'interface utilisateur (FrontEnd).
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Ensuite, il me permet de mettre en avant mes compétences et les projets que j'ai pu réaliser au fil des années. On y retrouve également mes coordonnées telles que mon adresse e-mail et mon numéro de téléphone. Vous pourrez accéder à mon CV ainsi qu'à ma présentation personnelle.
 
-## Build
+Enfin, j'espère que ce portfolio attisera la curiosité des employeurs étant donnés que je suis à la recherche d'une alternance pour ma troisième année de BUT Informatique à l'IUT de Nantes.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Contact
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+N'hésitez pas à me contacter par e-mail à l'adresse : thomas@ambroise.io
