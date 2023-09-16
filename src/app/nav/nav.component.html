@@ -1,5 +1,5 @@
 <nav>
-    <button *ngFor="let nav of navs" (onclick)="navigateTo(nav.url)">
+    <button *ngFor="let nav of navs" (click)="navigateTo(nav.url)">
         <span [textContent]="nav.label"></span>
         <img [src]="nav.icon" [alt]="nav.alt">
     </button>

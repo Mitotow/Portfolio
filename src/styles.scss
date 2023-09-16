@@ -24,6 +24,8 @@ $mint-green: #c2e7d9ff;
 
 /* MIXINS */
 @mixin PageTemplate {
+    position: relative;
+    overflow: hidden;
     padding: 20px;
     color: $mint-green;
     font-family: poppins;
@@ -40,4 +42,15 @@ $mint-green: #c2e7d9ff;
     height: 100vh;
     max-height: 100vh;
     overflow: hidden;
+}
+
+/* KEYFRAMES */
+@keyframes leftSlideIn {
+    from { left: -100%; } 
+    to { left: 0; }
+}
+
+@keyframes rightSlideIn {
+    from { right: -100%; } 
+    to { right: 0; }
 }
