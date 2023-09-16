@@ -54,3 +54,8 @@ $mint-green: #c2e7d9ff;
     from { right: -100%; } 
     to { right: 0; }
 }
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
