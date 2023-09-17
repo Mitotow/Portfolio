@@ -1,0 +1,31 @@
+<div class="page">
+    <div class="element">
+        <h1>Qu'est-ce que j'utilise ?</h1>
+        <div class="container">
+            <div class="container--wiuse" style="animation-delay: 0.2s;">
+                <h3>Languages</h3>
+                <div class="container--wiuse--use" *ngFor="let lang of languages">
+                    <i [class]="lang.iconClass"></i>
+                    <div class="container--wiuse--use--sep"></div>
+                    <span [textContent]="lang.name"></span>
+                </div> 
+            </div>
+            <div class="container--wiuse" style="animation-delay: 0.40s;">
+                <h3>Outils</h3>
+                <div class="container--wiuse--use" *ngFor="let tool of tools">
+                    <i [class]="tool.iconClass"></i>
+                    <div class="container--wiuse--use--sep"></div>
+                    <span [textContent]="tool.name"></span>
+                </div> 
+            </div>
+            <div class="container--wiuse" style="animation-delay: 0.60s;">
+                <h3>Frameworks</h3>
+                <div class="container--wiuse--use" *ngFor="let fw of frameworks">
+                    <i [class]="fw.iconClass"></i>
+                    <div class="container--wiuse--use--sep"></div>
+                    <span [textContent]="fw.name"></span>
+                </div> 
+            </div>
+        </div>
+    </div>
+</div>

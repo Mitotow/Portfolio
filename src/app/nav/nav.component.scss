@@ -1,7 +1,7 @@
 @import '../../styles.scss';
 
 nav {
-    position: absolute;
+    position: fixed;
     z-index: 999;
 
     left: 50%;
