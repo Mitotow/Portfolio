@@ -1,7 +1,7 @@
 <div class="page">
     <h1>Certains de mes projets</h1>
     <div class="projects">
-        <div class="projects-project" *ngFor="let p of projects" [ngStyle]="{'animation-delay': projects.indexOf(p)*0.5 + 's'}">
+        <div class="projects-project" *ngFor="let p of projects" [ngStyle]="{'animation-delay': projects.indexOf(p)*0.25 + 's'}">
             <div class="projects-project-text">
                 <h2 [textContent]="p.title"></h2>
                 <h3 [textContent]="p.subtitle"></h3>

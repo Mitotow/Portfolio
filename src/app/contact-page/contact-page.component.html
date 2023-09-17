@@ -1,3 +1,10 @@
 <div class="page">
-    
+    <div class="container">
+        <h1>Contactez-moi !</h1>    
+        <div class="contact">
+            <p>Email : <button (click)="onCopy('thomas@ambroise.io')" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">thomas@ambroise.io</button></p>
+            <p>Tél : <button (click)="onCopy('0783030538')" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">(+33) 7 83 03 05 38</button></p>
+        </div>
+        <div [class]="alert" [textContent]="alertText"></div>
+    </div>
 </div>

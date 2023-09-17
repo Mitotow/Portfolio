@@ -2,4 +2,75 @@
 
 .page {
     @include OnePage();
+
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 3vh;
+    justify-content: center;
+    align-items: center;
+
+    .container {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        transform: scale(0);
+        animation: growIn 1s forwards;
+
+        @include PageTitle();   
+
+        .contact {
+            display: flex;
+            flex-flow: column nowrap;
+            font-size: 24px;
+            p {
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: center;
+                align-items: center;
+                gap: 1vw;
+                button {
+                    color: $marian-blue;
+                    background: none;
+                    font-size: 24px;
+                    outline: none;
+                    border: none;
+
+                    transition: transform ease-in-out 0.5s;
+
+                    &:hover {
+                        cursor: pointer;
+                        transform: translateY(-2px);
+                    }
+                }
+            }
+        }
+    }
+
+    .copyVerif {
+        display: flex;
+        padding: 20px;
+        transform: scale(0);
+        transition: transform ease-in-out 150ms,
+            background ease-in-out 150ms;
+        background-color: $marian-blue;
+        color: $mint-green;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border-radius: 10px;
+
+        &--copied {
+            background-color: $mint-green;
+            color: $marian-blue;
+        }
+
+        &--show {
+            transform: scale(1);
+        }
+    }
+}
+
+@media (max-width: 380px) {
+    .page .container .contact p { flex-flow: column nowrap; }
 }
