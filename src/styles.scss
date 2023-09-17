@@ -26,7 +26,7 @@ $mint-green: #c2e7d9ff;
 @mixin PageTemplate {
     position: relative;
     overflow: hidden;
-    padding: 20px;
+    padding: 20px 20px 70px 20px;
     color: $mint-green;
     font-family: poppins;
     background-color: $dark-purple;
