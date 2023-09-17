@@ -44,5 +44,7 @@ export class ProjectsPageComponent {
       text: "Mon tout premier projet en Java a été la création d'un convertisseur d'unités, accompagné d'une interface graphique réalisée avec la bibliothèque Swing. Cette expérience m'a initié à la création d'interfaces graphiques et m'a permis d'apprendre les bases du langage Java. Ce projet marque mes premiers pas dans le développement d'applications Java avec une interface utilisateur.",
       used: ['Java', 'Swing']
     }
-  ]
+  ];
+
+  constructor() {}
 }
