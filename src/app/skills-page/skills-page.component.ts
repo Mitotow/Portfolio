@@ -87,4 +87,6 @@ export class SkillsPageComponent {
       name: '.NET',
     },
   ]
+
+  constructor() {}
 }
