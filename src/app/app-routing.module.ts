@@ -4,6 +4,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { SkillsPageComponent } from './skills-page/skills-page.component';
 import { NotfoundPageComponent } from './notfound-page/notfound-page.component';
 import { ProjectsPageComponent } from './projects-page/projects-page.component';
+import { ContactPageComponent } from './contact-page/contact-page.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'projects',
     component: ProjectsPageComponent,
+  },
+  {
+    path: 'contact',
+    component: ContactPageComponent,
   },
   {
     path: '**',

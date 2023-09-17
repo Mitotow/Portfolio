@@ -8,6 +8,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { NotfoundPageComponent } from './notfound-page/notfound-page.component';
 import { SkillsPageComponent } from './skills-page/skills-page.component';
 import { ProjectsPageComponent } from './projects-page/projects-page.component';
+import { ContactPageComponent } from './contact-page/contact-page.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ProjectsPageComponent } from './projects-page/projects-page.component';
     HomePageComponent,
     NotfoundPageComponent,
     SkillsPageComponent,
-    ProjectsPageComponent
+    ProjectsPageComponent,
+    ContactPageComponent
   ],
   imports: [
     BrowserModule,
