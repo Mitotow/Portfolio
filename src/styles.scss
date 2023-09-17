@@ -44,6 +44,15 @@ $mint-green: #c2e7d9ff;
     overflow: hidden;
 }
 
+@mixin PageTitle() {
+    h1 {
+        text-align: center;
+        opacity: 0;
+        animation: fadeIn 2s forwards;
+        margin-bottom: 30px; // Space between content and title
+    }
+}
+
 /* KEYFRAMES */
 @mixin topSlideInMixin($v) {
     @keyframes topSlideIn {

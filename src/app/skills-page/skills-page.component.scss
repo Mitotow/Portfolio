@@ -7,13 +7,7 @@
         display: flex;
         flex-flow: column nowrap;
 
-        gap: 20px;
-
-        h1 {
-            text-align: center;
-            opacity: 0;
-            animation: fadeIn 2s forwards;
-        }
+        @include PageTitle();
     
         .container {
             width: 100%;

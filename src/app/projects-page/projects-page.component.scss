@@ -2,4 +2,47 @@
 
 .page {
     @include OnePage();
+    @include PageTitle();
+
+    .projects {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        gap: 20px;
+
+        &-project {
+            width: 400px;
+            height: 500px;
+
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: space-between;
+
+            padding: 20px;
+            background-color: rgba($color: $federal-blue, $alpha: 0.5);
+            border-radius: 20px;
+
+            transform: scale(0);
+            animation: growIn 1s forwards;
+
+            &-text {
+                h2 {font-weight: 600;}
+                h3 {color:$marian-blue;}
+            }
+
+            &-utils {
+                display: flex;
+                flex-flow: row wrap;
+                gap: 10px;
+
+                span {
+                    padding: 5px;
+                    background-color: rgba($color: $marian-blue, $alpha: 0.75);
+                    border-radius: 10px;
+                }
+            }
+        }
+    }
 }
+
+@media (max-width: 450px) {.page .projects-project {height: 550px;}}
