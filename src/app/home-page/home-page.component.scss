@@ -1,5 +1,7 @@
 @import "../../styles.scss";
 
+@include topSlideInMixin(50%);
+
 .page {
     @include OnePage();
 
@@ -23,13 +25,15 @@
         justify-content: center;
         align-items: center;
         width: 100%;
-        top: 50%;
+        top: -100%;
         left: 50%;
         z-index: 2;
 
         transform: translate(-50%, -50%);
 
         text-align: center;
+
+        animation: topSlideIn 1s forwards;
 
         *:hover {cursor:default;}
 
