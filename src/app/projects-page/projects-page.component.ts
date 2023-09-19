@@ -24,7 +24,7 @@ export class ProjectsPageComponent {
       title: "Pickomino Game",
       subtitle: "Jeu Vidéo",
       text: "En collaboration avec deux coéquipiers, j'ai développé une adaptation en Kotlin du jeu de société 'Pickomino' en une expérience de jeu vidéo. Mon rôle était de créer la logique backend, tandis que mes collègues se sont concentrés sur la partie graphique en utilisant JavaFX et les tests. Cette réalisation, réalisée dans le cadre de ma formation universitaire à l'IUT de Nantes, m'a permis d'explorer la conception de jeux et de renforcer mes compétences en développement.",
-      used: ['Kotlin'],
+      used: ['Kotlin', 'JavaFX'],
     },
     {
       title: "Générateur Particule",
