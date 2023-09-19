@@ -12,7 +12,7 @@ export class ProjectsPageComponent {
       title: "Portfolio",
       subtitle: "Site Internet",
       text: "Mon portfolio représente une réalisation dont je suis particulièrement fier. En tant que développeur front-end en herbe, je n'avais pas d'expérience préalable avec Angular, mais ce projet m'a offert l'opportunité d'acquérir de nouvelles compétences. Je suis heureux de partager mon parcours à travers ce site, qui me sert à me présenter et à mettre en valeur mes réalisations.",
-      used: ['Angular', 'Typescript', 'HTML', 'CSS'],
+      used: ['Angular', 'Typescript', 'HTML', 'SCSS'],
     },
     {
       title: "Emplois du temps IUT",
