@@ -11,8 +11,9 @@
         gap: 20px;
 
         &-project {
+            cursor: default;
             width: 400px;
-            height: 500px;
+            height: 40vh;
 
             display: flex;
             flex-flow: column nowrap;
@@ -25,9 +26,27 @@
             transform: scale(0);
             animation: growIn 1s forwards;
 
-            &-text {
-                h2 {font-weight: 600;}
-                h3 {color:$marian-blue;}
+            &-header {
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: space-between;
+                align-items: flex-start;
+                &-text {
+                    h2 {font-weight: 600;}
+                    h3 {color:$marian-blue;}
+                }
+                img {
+                    width: 20px;
+                    height: auto;
+
+                    transition: transform ease-in-out 250ms;
+
+                    &:hover {
+                        cursor: pointer;
+                        transform: scale(1.2);
+                    }
+                    
+                }
             }
 
             &-utils {
