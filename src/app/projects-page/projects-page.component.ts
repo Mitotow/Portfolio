@@ -42,7 +42,14 @@ export class ProjectsPageComponent {
       text: "Programme d'initiation à C# et .NET, j'avais déjà commencé à réaliser un serveur API, mais j'ai préféré recommencer depuis le début et créer ce petit programme de gestion de file d'attente basique.",
       git: new URL('https://github.com/Mitotow/QueueManager'),
       used: ['C#', ".NET 7.0"]
-    }
+    },
+    {
+      title: "HardcoreRedemption",
+      subtitle: "Jeu vidéo",
+      text: "Développement d'un plugin Minecraft qui permet de jouer en mode hardcore (pour débutants), dans lequel lorsqu'un joueur meurt, il a la possibilité d'être sauvé par un autre joueur.",
+      git: new URL('https://github.com/Mitotow/HardcoreRedemption'),
+      used: ['Java', "Spigot"]
+    },
   ];
 
   constructor() {}
