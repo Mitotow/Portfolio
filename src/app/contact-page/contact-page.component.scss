@@ -4,8 +4,6 @@
     @include OnePage();
 
     display: flex;
-    flex-flow: column nowrap;
-    gap: 3vh;
     justify-content: center;
     align-items: center;
 
@@ -14,10 +12,13 @@
         flex-flow: column nowrap;
         justify-content: center;
         align-items: center;
+        gap: 20px;
         transform: scale(0);
         animation: growIn 1s forwards;
 
         @include PageTitle();   
+
+        h1{margin: 0;padding:0;}
 
         .contact {
             display: flex;
