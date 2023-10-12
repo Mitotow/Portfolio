@@ -52,6 +52,10 @@ export class SkillsPageComponent {
       name: 'git',
     },
     {
+      iconClass: 'devicon-nodejs-plain colored',
+      name: 'NodeJS',
+    },
+    {
       iconClass: 'devicon-postgresql-plain colored',
       name: 'Postgresql',
     },
@@ -77,10 +81,6 @@ export class SkillsPageComponent {
     {
       iconClass: 'devicon-react-plain colored',
       name: 'React',
-    },
-    {
-      iconClass: 'devicon-nodejs-plain colored',
-      name: 'NodeJS',
     },
     {
       iconClass: 'devicon-dotnetcore-plain colored',
