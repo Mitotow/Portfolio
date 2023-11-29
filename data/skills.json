@@ -1,0 +1,77 @@
+[
+    {
+        "iconClass": "devicon-html5-plain colored",
+        "name": "HTML5",
+        "type": "language"
+    },
+    {
+        "iconClass": "devicon-css3-plain colored",
+        "name": "CSS3",
+        "type": "language"
+    },
+    {
+        "iconClass": "devicon-javascript-plain colored",
+        "name": "Javascript",
+        "type": "language"
+    },
+    {
+        "iconClass": "devicon-typescript-plain colored",
+        "name": "Typescript",
+        "type": "language"
+    },
+    {
+        "iconClass": "devicon-java-plain colored",
+        "name": "Java",
+        "type": "language"
+    },
+    {
+        "iconClass": "devicon-kotlin-plain colored",
+        "name": "Kotlin",
+        "type": "language"
+    },
+    {
+        "iconClass": "devicon-git-plain colored",
+        "name": "git",
+        "type": "tool"
+    },
+    {
+        "iconClass": "devicon-nodejs-plain colored",
+        "name": "NodeJS",
+        "type": "tool"
+    },
+    {
+        "iconClass": "devicon-mysql-plain colored",
+        "name": "MySQL",
+        "type": "tool"
+    },
+    {
+        "iconClass": "devicon-jetbrains-plain colored",
+        "name": "Jerbrains",
+        "type": "tool"
+    },
+    {
+        "iconClass": "devicon-visualstudio-plain colored",
+        "name": "Visual Studio",
+        "type": "tool"
+    },
+    {
+        "iconClass": "devicon-vscode-plain colored",
+        "name": "Visual Studio Code",
+        "type": "tool"
+    },
+    {
+        "iconClass": "devicon-angularjs-plain colored",
+        "name": "Angular",
+        "type": "framework"
+    },
+    {
+        "iconClass": "devicon-react-plain colored",
+        "name": "React",
+        "type": "framework"
+    },
+    {
+        "iconClass": "devicon-laravel-plain colored",
+        "name": "Laravel",
+        "type": "framework"
+    }
+]

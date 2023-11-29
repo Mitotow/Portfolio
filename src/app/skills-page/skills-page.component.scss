@@ -30,6 +30,9 @@
     
                 background-color: rgba($color: $federal-blue, $alpha: 0.5);
                 animation: growIn 1s ease-in-out forwards;
+
+                h3 { align-self: center; }
+
                 &--use {
                     display: flex;
                     flex-flow: row wrap;

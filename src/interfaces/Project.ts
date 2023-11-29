@@ -2,6 +2,6 @@ export default interface Project {
     title: string,
     subtitle: string,
     text: string,
-    git: URL,
+    git: string,
     used: string[],
 }

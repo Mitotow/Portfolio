@@ -1,4 +1,4 @@
-export default interface Usage {
+export default interface SkillElement {
     iconClass:string,
     name:string,
 }
