@@ -30,6 +30,11 @@
         "type": "language"
     },
     {
+        "iconClass": "devicon-go-original-wordmark colored",
+        "name": "Go",
+        "type": "language"
+    },
+    {
         "iconClass": "devicon-git-plain colored",
         "name": "git",
         "type": "tool"
