@@ -47,5 +47,12 @@
         "text": "Site internet réalisé pour l'utilisation de différentes API de News. Ce petit projet m'a permis de réaliser des appels API optimisés sans recourir à 'useEffect' et en privilégiant l'utilisation de la bibliothèque React Query.",
         "git": "https://github.com/Mitotow/NewsNook.git",
         "used": ["React", "Typescript", "HTML", "SCSS"]
+    },
+    {
+        "title": "Puissance 4",
+        "subtitle": "Jeu vidéo",
+        "text": "Projet universitaire visant à adapter un jeu fournit (puissance 4) jouable local contre \"l'ordinateur\" en un jeu jouable en multijoueur avec un système client/serveur. Le serveur est entièrement développer par le groupe d'étudiant et le client est adapter à l'utilisation avec le serveur.",
+        "git": "https://gitlab.univ-nantes.fr/E224340Y/projet-puissance4",
+        "used": ["golang", "ebiten"]
     }
 ]
