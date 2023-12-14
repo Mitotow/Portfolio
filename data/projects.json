@@ -51,7 +51,7 @@
     {
         "title": "Puissance 4",
         "subtitle": "Jeu vidéo",
-        "text": "Projet universitaire visant à adapter un jeu fournit (puissance 4) jouable local contre \"l'ordinateur\" en un jeu jouable en multijoueur avec un système client/serveur. Le serveur est entièrement développer par le groupe d'étudiant et le client est adapter à l'utilisation avec le serveur.",
+        "text": "Projet universitaire visant à adapter un jeu fourni (Puissance 4) jouable en local contre \"l'ordinateur\" en un jeu jouable en multijoueur avec un système client/serveur. Le serveur est entièrement développé par le groupe d'étudiants, et le client est adapté à l'utilisation avec le serveur.",
         "git": "https://gitlab.univ-nantes.fr/E224340Y/projet-puissance4",
         "used": ["golang", "ebiten"]
     }
