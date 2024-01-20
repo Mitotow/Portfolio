@@ -20,7 +20,8 @@
             &--wiuse {
                 display: flex;
                 flex-flow: column nowrap;
-                width: 300px;
+                width: fit-content;
+                min-width: 300px;
                 gap: 2vh;
     
                 padding: 20px;

@@ -53,6 +53,13 @@
         "subtitle": "Jeu vidéo",
         "text": "Projet universitaire visant à adapter un jeu fourni (Puissance 4) jouable en local contre \"l'ordinateur\" en un jeu jouable en multijoueur avec un système client/serveur. Le serveur est entièrement développé par le groupe d'étudiants, et le client est adapté à l'utilisation avec le serveur.",
         "git": "https://gitlab.univ-nantes.fr/E224340Y/projet-puissance4",
-        "used": ["golang", "ebiten"]
+        "used": ["Golang", "Ebiten"]
+    },
+    {
+      "title": "Les 3 Moustiquaires",
+      "subtitle": "Site Internet",
+      "text": "Réalisé en collaboration avec trois camarades de l'IUT en une semaine et demie, ce site internet présente une entreprise fictive spécialisée dans la vente de moustiquaires de luxe. Inspiré par des marques renommées, le front-end se doit d'être élégant, tandis que le back-end gère les produits, clients, catégories, paniers et commandes.",
+      "git": "",
+      "used": ["Laravel", "Mariadb"]
     }
 ]
