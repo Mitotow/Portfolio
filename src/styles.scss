@@ -60,6 +60,13 @@ $mint-green: #c2e7d9ff;
     }
 }
 
+@mixin leftSlideInMixin($v) {
+    @keyframes leftSlideIn {
+        from { left: -100%; } 
+        to { left: $v; }
+    } 
+}
+
 @keyframes leftSlideIn {
     from { left: -100%; } 
     to { left: 0; }
