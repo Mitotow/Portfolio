@@ -26,10 +26,10 @@ jobs:
       - name: Deploy via SFTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
-          server: dj9eew.ftp.infomaniak.com
-          username: dj9eew_system
-          password: x5VLK-7_@3llB
+          server: ${{ secrets.FTP_URL }}
+          username: ${{ secrets.FTP_USR }}
+          password: ${{ secrets.FTP_PWD }}
           local-dir: ./dist/portfolio/
-          server-dir: /sites/thomas-ambroise.fr/
+          server-dir: ${{ vars.FTP_SERVER_DIR }}
           protocol: ftps
           security: strict
