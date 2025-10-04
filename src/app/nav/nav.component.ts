@@ -3,9 +3,10 @@ import { Router } from '@angular/router';
 import Nav from 'src/interfaces/Nav';
 
 @Component({
-  selector: 'app-nav',
-  templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.scss']
+    selector: 'app-nav',
+    templateUrl: './nav.component.html',
+    styleUrls: ['./nav.component.scss'],
+    standalone: false
 })
 export class NavComponent implements OnInit {
   navs: Nav[] = [

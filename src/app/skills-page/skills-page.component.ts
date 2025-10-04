@@ -3,9 +3,10 @@ import SkillElement from 'src/interfaces/SkillElement';
 import data from '@data/skills.json';
 
 @Component({
-  selector: 'app-skills-page',
-  templateUrl: './skills-page.component.html',
-  styleUrls: ['./skills-page.component.scss']
+    selector: 'app-skills-page',
+    templateUrl: './skills-page.component.html',
+    styleUrls: ['./skills-page.component.scss'],
+    standalone: false
 })
 export class SkillsPageComponent {
   languages:SkillElement[]=data.filter(e => e.type == 'language');
