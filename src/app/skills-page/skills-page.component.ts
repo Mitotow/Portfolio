@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import SkillElement from 'src/interfaces/SkillElement';
-import data from '../../../data/skills.json';
+import data from '@data/skills.json';
 
 @Component({
   selector: 'app-skills-page',
