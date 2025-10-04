@@ -1,4 +1,0 @@
-FROM docker.io/library/httpd
-RUN chown -R www-data:www-data /usr/local/apache2
-COPY ../dist/portfolio /usr/local/apache2/htdocs/
-EXPOSE 80
