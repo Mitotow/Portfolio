@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import Project from 'src/interfaces/Project';
-import data from '../../../data/projects.json';
+import data from '@data/projects.json';
 
 @Component({
   selector: 'app-projects-page',
