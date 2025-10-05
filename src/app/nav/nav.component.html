@@ -1,6 +1,8 @@
 <nav>
-    <button *ngFor="let nav of navs">
-        <img [src]="nav.icon" [alt]="nav.alt" (click)="navigateTo(nav.url)">
-        <span [textContent]="nav.label"></span>
+  @for (nav of navs; track nav) {
+    <button>
+      <img [src]="nav.icon" [alt]="nav.alt" (click)="navigateTo(nav.url)">
+      <span [textContent]="nav.label"></span>
     </button>
+  }
 </nav>
