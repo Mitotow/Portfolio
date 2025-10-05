@@ -1,15 +1,5 @@
 [
     {
-        "iconClass": "devicon-html5-plain colored",
-        "name": "HTML5",
-        "type": "language"
-    },
-    {
-        "iconClass": "devicon-css3-plain colored",
-        "name": "CSS3",
-        "type": "language"
-    },
-    {
         "iconClass": "devicon-javascript-plain colored",
         "name": "Javascript",
         "type": "language"
@@ -17,6 +7,11 @@
     {
         "iconClass": "devicon-typescript-plain colored",
         "name": "Typescript",
+        "type": "language"
+    },
+    {
+        "iconClass": "devicon-c-original colored",
+        "name": "C",
         "type": "language"
     },
     {
@@ -35,13 +30,18 @@
         "type": "language"
     },
     {
+        "iconClass": "devicon-linux-plain",
+        "name": "Linux",
+        "type": "tool"
+    },
+    {
         "iconClass": "devicon-git-plain colored",
         "name": "Git",
         "type": "tool"
     },
     {
-        "iconClass": "devicon-nodejs-plain colored",
-        "name": "NodeJS",
+        "iconClass": "devicon-docker-plain colored",
+        "name": "Docker",
         "type": "tool"
     },
     {
@@ -50,13 +50,13 @@
         "type": "tool"
     },
     {
-        "iconClass": "devicon-jetbrains-plain colored",
-        "name": "Jetbrains",
+        "iconClass": "devicon-neovim-plain colored",
+        "name": "NeoVim",
         "type": "tool"
     },
     {
-        "iconClass": "devicon-visualstudio-plain colored",
-        "name": "Visual Studio",
+        "iconClass": "devicon-jetbrains-plain colored",
+        "name": "Jetbrains",
         "type": "tool"
     },
     {
@@ -65,7 +65,7 @@
         "type": "tool"
     },
     {
-        "iconClass": "devicon-angularjs-plain colored",
+        "iconClass": "devicon-angular-plain",
         "name": "Angular",
         "type": "framework"
     },
@@ -75,8 +75,13 @@
         "type": "framework"
     },
     {
-        "iconClass": "devicon-laravel-plain colored",
-        "name": "Laravel",
+        "iconClass": "devicon-svelte-plain colored",
+        "name": "Svelte",
+        "type": "framework"
+    },
+    {
+        "iconClass": "devicon-spring-original colored",
+        "name": "Springboot",
         "type": "framework"
     }
 ]

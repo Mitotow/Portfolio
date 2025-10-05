@@ -1,4 +1,4 @@
 export default interface SkillElement {
-    iconClass:string,
-    name:string,
+    iconClass: string;
+    name: string;
 }

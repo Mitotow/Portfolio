@@ -1,0 +1,13 @@
+<nav>
+    @for (nav of navs; track nav) {
+    <button
+        #navButton
+        (click)="handle(nav.alt, nav.url)"
+        (keydown.enter)="handle(nav.alt, nav.url)"
+        aria-label="{{ nav.alt }}"
+        id="{{ nav.alt }}">
+        <img [src]="nav.icon" [alt]="" />
+        <span [textContent]="nav.label"></span>
+    </button>
+    }
+</nav>

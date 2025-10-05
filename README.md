@@ -2,7 +2,7 @@
 
 Bienvenue ! Je suis Thomas AMBROISE, étudiant en école d'ingénieur au campus de l'ISEN Ouest à Nantes. Ce portfolio est un moyen de présenter mes compétences, mes projets ainsi que moi-même.
 
->Pour aller voir mon portfolio c'est [ici](https://thomas-ambroise.fr) !
+> Pour aller voir mon portfolio c'est [ici](https://thomas-ambroise.fr) !
 
 ## Objectif
 
