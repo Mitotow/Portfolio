@@ -5,9 +5,8 @@ $marian-blue: #26408bff;
 $light-blue: #a6cfd5ff;
 $mint-green: #c2e7d9ff;
 
-
-/* FONTS */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+@import '@fontsource/poppins/500.css';
+@import '@fontsource/poppins/600.css';
 
 /* REQUIREMENTS */
 * {

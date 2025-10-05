@@ -1,18 +1,22 @@
 <div class="page">
-    <h1>Mes Projets</h1>
-    <div class="projects">
-        <div class="projects-project" *ngFor="let p of projects" [ngStyle]="{'animation-delay': projects.indexOf(p)*0.25 + 's'}">
-            <div class="projects-project-header">
-                <div class="projects-project-header-text">
-                    <h2 [textContent]="p.title"></h2>
-                    <h3 [textContent]="p.subtitle"></h3>
-                </div>
-                <img src="/assets/projects/source.svg" alt="source" (click)="openSource(p.git)">
-            </div>
-            <p [textContent]="p.text"></p>
-            <div class="projects-project-utils">
-                <span *ngFor="let util of p.used" [textContent]="util"></span>
-            </div>
+  <h1>Mes Projets</h1>
+  <div class="projects">
+    @for (p of projects; track p) {
+      <div class="projects-project" [ngStyle]="{'animation-delay': projects.indexOf(p)*0.25 + 's'}">
+        <div class="projects-project-header">
+          <div class="projects-project-header-text">
+            <h2 [textContent]="p.title"></h2>
+            <h3 [textContent]="p.subtitle"></h3>
+          </div>
+          <img src="/assets/projects/source.svg" alt="source" (click)="openSource(p.git)">
         </div>
-    </div>
+        <p [textContent]="p.text"></p>
+        <div class="projects-project-utils">
+          @for (util of p.used; track util) {
+            <span [textContent]="util"></span>
+          }
+        </div>
+      </div>
+    }
+  </div>
 </div>
