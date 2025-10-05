@@ -5,8 +5,8 @@ $marian-blue: #26408bff;
 $light-blue: #a6cfd5ff;
 $mint-green: #c2e7d9ff;
 
-@import '@fontsource/poppins/500.css';
-@import '@fontsource/poppins/600.css';
+@import "@fontsource/poppins/500.css";
+@import "@fontsource/poppins/600.css";
 
 /* REQUIREMENTS */
 * {
@@ -55,33 +55,55 @@ $mint-green: #c2e7d9ff;
 /* KEYFRAMES */
 @mixin topSlideInMixin($v) {
     @keyframes topSlideIn {
-        100% { top: $v }    
+        100% {
+            top: $v;
+        }
     }
 }
 
 @mixin leftSlideInMixin($v) {
     @keyframes leftSlideIn {
-        from { left: -100%; } 
-        to { left: $v; }
-    } 
+        from {
+            left: -100%;
+        }
+        to {
+            left: $v;
+        }
+    }
 }
 
 @keyframes leftSlideIn {
-    from { left: -100%; } 
-    to { left: 0; }
+    from {
+        left: -100%;
+    }
+    to {
+        left: 0;
+    }
 }
 
 @keyframes rightSlideIn {
-    from { right: -100%; } 
-    to { right: 0; }
+    from {
+        right: -100%;
+    }
+    to {
+        right: 0;
+    }
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes growIn {
-    from { transform: scale(0); }
-    to { transform: scale(1); }
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
 }

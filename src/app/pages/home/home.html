@@ -1,0 +1,32 @@
+<div class="page">
+    <img src="/assets/home/left-shape.svg" alt="" class="shape shape-left" />
+    <img src="/assets/home/right-shape.svg" alt="" class="shape shape-right" />
+
+    <div class="container">
+        <img src="/assets/home/profile.jpg" alt="Picture of Thomas AMBROISE" />
+        <h1>Thomas AMBROISE</h1>
+        <h2>Bienvenue sur mon portfolio !</h2>
+        <h3>
+            Étudiant en <span>BUT Informatique</span> et
+            <span>Développeur</span>
+        </h3>
+        <div class="container-buttons">
+            <button
+                (click)="open('https://github.com/Mitotow')"
+                (keydown.enter)="open('https://github.com/Mitotow')"
+                aria-label="Mon profil GitHub">
+                <i class="devicon-github-original" aria-hidden="true"></i>
+            </button>
+            <button
+                (click)="
+                    open(
+                        'https://www.linkedin.com/in/thomas-ambroise-57971325b/'
+                    )
+                "
+                (keydown.enter)="open('https://www.linkedin.com/in/thomas-ambroise-57971325b/')"
+                aria-label="Mon profil Linkedin">
+                <i class="devicon-linkedin-plain" aria-hidden="true"></i>
+            </button>
+        </div>
+    </div>
+</div>
