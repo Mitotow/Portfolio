@@ -3,6 +3,8 @@
 .page {
     @include OnePage();
     @include PageTitle();
+    @include loader();
+    @include centeredContainer();
 
     .projects {
         display: flex;
@@ -13,7 +15,6 @@
         &-project {
             cursor: default;
             width: 400px;
-            height: 40vh;
 
             display: flex;
             flex-flow: column nowrap;
@@ -26,11 +27,14 @@
             transform: scale(0);
             animation: growIn 1s forwards;
 
+            gap: 1vh;
+
             &-header {
                 display: flex;
                 flex-flow: row nowrap;
                 justify-content: space-between;
                 align-items: flex-start;
+
                 &-text {
                     h2 {
                         font-weight: 600;
@@ -78,7 +82,6 @@
 
 @media (max-width: 850px) {
     .page .projects-project {
-        height: max-content;
         gap: 1vh;
     }
 }

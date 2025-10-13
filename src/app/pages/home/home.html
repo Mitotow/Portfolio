@@ -12,18 +12,14 @@
         </h3>
         <div class="container-buttons">
             <button
-                (click)="open('https://github.com/Mitotow')"
-                (keydown.enter)="open('https://github.com/Mitotow')"
+                (click)="linksUtils.openGithub()"
+                (keydown.enter)="linksUtils.openGithub()"
                 aria-label="Mon profil GitHub">
                 <i class="devicon-github-original" aria-hidden="true"></i>
             </button>
             <button
-                (click)="
-                    open(
-                        'https://www.linkedin.com/in/thomas-ambroise-57971325b/'
-                    )
-                "
-                (keydown.enter)="open('https://www.linkedin.com/in/thomas-ambroise-57971325b/')"
+                (click)="linksUtils.openLinkedin()"
+                (keydown.enter)="linksUtils.openLinkedin()"
                 aria-label="Mon profil Linkedin">
                 <i class="devicon-linkedin-plain" aria-hidden="true"></i>
             </button>

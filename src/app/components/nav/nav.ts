@@ -49,6 +49,10 @@ export class NavComponent {
 
     handle(id: string, path: string) {
         this.router.navigate([path]);
-        this.buttons.find(b => b.nativeElement.id === id)?.nativeElement.blur();
+        setTimeout(() => {
+            this.buttons
+                .find(b => b.nativeElement.id === id)
+                ?.nativeElement.blur();
+        }, 100);
     }
 }
