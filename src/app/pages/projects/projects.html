@@ -1,12 +1,17 @@
 <div class="page">
     <h1>Mes Projets</h1>
+    @if (loading) {
+    <div class="centered-container">
+        <div class="loader"></div>
+    </div>
+    } @else if (projects.length !== 0) {
     <div class="projects">
         @for (p of projects; track p) {
         <div
             class="projects-project"
             [ngStyle]="{
-                    'animation-delay': projects.indexOf(p) * 0.25 + 's',
-                }">
+                            'animation-delay': projects.indexOf(p) * 0.25 + 's',
+                        }">
             <div class="projects-project-header">
                 <div class="projects-project-header-text">
                     <h2>{{ p.title }}</h2>
@@ -28,4 +33,13 @@
         </div>
         }
     </div>
+    } @else {
+    <div class="centered-container">
+        <h2>Aïe, je n'ai pas réussi à récupérer la liste des projets ...</h2>
+        <h3>
+            Je vous laisse aller voir directement mon
+            <button (click)="linksUtils.openGithub()">Github</button>
+        </h3>
+    </div>
+    }
 </div>

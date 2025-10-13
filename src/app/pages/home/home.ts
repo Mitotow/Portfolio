@@ -1,4 +1,5 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import LinksUtils from "src/utils/LinksUtils";
 
 @Component({
     selector: "app-home-page",
@@ -6,8 +7,10 @@ import { Component } from "@angular/core";
     templateUrl: "./home.html",
     styleUrls: ["./home.scss"],
 })
-export class HomePageComponent {
-    open(link: string) {
-        window.open(link, "_blank");
+export class HomePageComponent implements OnInit {
+    linksUtils!: LinksUtils;
+
+    ngOnInit() {
+        this.linksUtils = new LinksUtils();
     }
 }

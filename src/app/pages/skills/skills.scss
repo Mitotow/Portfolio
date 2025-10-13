@@ -2,6 +2,8 @@
 
 .page {
     @include OnePage();
+    @include loader();
+    @include centeredContainer();
 
     .element {
         display: flex;
