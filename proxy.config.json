@@ -1,0 +1,8 @@
+{
+    "/api": {
+        "target": "https://api.thomas-ambroise.fr",
+        "secure": true,
+        "changeOrigin": true,
+        "logDebug": true
+    }
+}

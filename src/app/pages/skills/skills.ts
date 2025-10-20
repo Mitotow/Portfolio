@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from "@angular/core";
 import SkillElement, { SkillType } from "src/interfaces/SkillElement";
 import LinksUtils from "src/utils/LinksUtils";
-import { DataStore } from "src/stores/ProjectsStore";
+import { DataStore } from "src/stores/DataStore";
 
 @Component({
     selector: "app-skills-page",

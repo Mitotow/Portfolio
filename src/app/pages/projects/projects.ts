@@ -2,7 +2,7 @@ import { Component, inject, OnInit } from "@angular/core";
 import Project from "src/interfaces/Project";
 import { NgStyle } from "@angular/common";
 import LinksUtils from "src/utils/LinksUtils";
-import { DataStore } from "src/stores/ProjectsStore";
+import { DataStore } from "src/stores/DataStore";
 
 @Component({
     selector: "app-projects-page",
