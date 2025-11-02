@@ -7,7 +7,7 @@
     } @else if (projects.length !== 0) {
     <div class="projects">
         @for (p of projects; track p) {
-        <div
+        <!--<div
             class="projects-project"
             [ngStyle]="{
                             'animation-delay': projects.indexOf(p) * 0.25 + 's',
@@ -30,7 +30,13 @@
                 <span [textContent]="util"></span>
                 }
             </div>
-        </div>
+        </div>-->
+        <app-card
+            [title]="p.title"
+            [subtitle]="p.subtitle"
+            [content]="p.text"
+            [buttons]="getCardButtons(p)"
+        />
         }
     </div>
     } @else {

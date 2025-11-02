@@ -9,6 +9,10 @@ export default class LinksUtils {
         this.open(constants.LINKEDIN_URL);
     }
 
+    openBlank(href: string) {
+        this.open(href);
+    }
+
     private open(link: string) {
         window.open(link, "_blank");
     }

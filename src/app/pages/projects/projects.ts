@@ -1,15 +1,16 @@
 import { Component, inject, OnInit } from "@angular/core";
 import Project from "src/interfaces/Project";
-import { NgStyle } from "@angular/common";
 import LinksUtils from "src/utils/LinksUtils";
 import { DataStore } from "src/stores/DataStore";
+import { CardComponent } from "src/app/components/card/card";
+import CardButton from "src/interfaces/CardButton";
 
 @Component({
     selector: "app-projects-page",
     standalone: true,
     templateUrl: "./projects.html",
     styleUrls: ["./projects.scss"],
-    imports: [NgStyle],
+    imports: [CardComponent],
 })
 export class ProjectsPageComponent implements OnInit {
     private dataStore = inject(DataStore);
@@ -37,5 +38,11 @@ export class ProjectsPageComponent implements OnInit {
         });
     }
 
-    openSource = (url: string) => window.open(url, "_blank");
+    getCardButtons(project: Project): CardButton[] {
+        return [{
+            name: "Sources",
+            href: project.git,
+            icon: "/assets/projects/source.svg",
+        }];
+    }
 }

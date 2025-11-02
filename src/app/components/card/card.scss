@@ -1,0 +1,36 @@
+@use "../../../styles/styles.scss";
+
+.card {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: left;
+    gap: 1vh;
+
+    background-color: $federal-blue;
+
+    &-header {
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    &-footer {
+        button {
+            width: 400px;
+            padding: 5px;
+
+            border-radius: 20px;
+
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+            gap: 10px;
+
+            background-color: $marian-blue;
+
+            img {
+                max-width: 20px;
+            }
+        }
+    }
+}
