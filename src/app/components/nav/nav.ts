@@ -51,7 +51,7 @@ export class NavComponent {
         this.router.navigate([path]);
         setTimeout(() => {
             this.buttons
-                .find(b => b.nativeElement.id === id)
+                .find((b) => b.nativeElement.id === id)
                 ?.nativeElement.blur();
         }, 100);
     }

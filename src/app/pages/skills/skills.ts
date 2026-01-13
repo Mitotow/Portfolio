@@ -34,7 +34,7 @@ export class SkillsPageComponent implements OnInit {
 
     fetchSkills() {
         this.dataStore.getSkills().subscribe({
-            next: res => {
+            next: (res) => {
                 if (res.status == 200 && res.body !== null) {
                     this.skills = res.body;
                 }
@@ -48,6 +48,6 @@ export class SkillsPageComponent implements OnInit {
     }
 
     private filter(type: SkillType) {
-        return this.skills.filter(s => s.type == type);
+        return this.skills.filter((s) => s.type == type);
     }
 }

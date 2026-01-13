@@ -24,7 +24,7 @@ export class ProjectsPageComponent implements OnInit {
 
     fetchProjects() {
         this.dataStore.getProjects().subscribe({
-            next: res => {
+            next: (res) => {
                 if (res.status == 200 && res.body !== null) {
                     this.projects = res.body;
                 }

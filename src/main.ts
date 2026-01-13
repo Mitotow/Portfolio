@@ -5,4 +5,4 @@ import { GlobalCacheConfig } from "ts-cacheable";
 import { constants } from "src/constants";
 
 GlobalCacheConfig.maxAge = constants.CACHE_TTL;
-bootstrapApplication(App, appConfig).catch(err => console.error(err));
+bootstrapApplication(App, appConfig).catch((err) => console.error(err));
