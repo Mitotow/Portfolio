@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { NgOptimizedImage } from "@angular/common";
 import LinksUtils from "src/utils/LinksUtils";
 
 @Component({
@@ -7,7 +6,6 @@ import LinksUtils from "src/utils/LinksUtils";
     standalone: true,
     templateUrl: "./home.html",
     styleUrls: ["./home.scss"],
-    imports: [NgOptimizedImage],
 })
 export class HomePageComponent implements OnInit {
     linksUtils!: LinksUtils;
