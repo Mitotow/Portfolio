@@ -1,11 +1,11 @@
 <div class="page">
     <div class="element">
         <h1>Mes Compétences</h1>
-        @if (loading) {
+        @if (loading()) {
         <div class="centered-container">
             <div class="loader"></div>
         </div>
-        } @else if (skills.length !== 0) {
+        } @else if (skills().length !== 0) {
         <div class="container">
             <div class="container--wiuse" style="animation-delay: 0.2s">
                 <h3>Langages</h3>

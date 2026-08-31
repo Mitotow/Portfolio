@@ -1,4 +1,10 @@
-import { Component, inject, OnInit } from "@angular/core";
+import {
+    Component,
+    inject,
+    signal,
+    OnInit,
+    ChangeDetectionStrategy,
+} from "@angular/core";
 import Project from "src/interfaces/Project";
 import { NgStyle } from "@angular/common";
 import LinksUtils from "src/utils/LinksUtils";
@@ -9,13 +15,14 @@ import { DataStore } from "src/stores/ProjectsStore";
     standalone: true,
     templateUrl: "./projects.html",
     styleUrls: ["./projects.scss"],
+    changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [NgStyle],
 })
 export class ProjectsPageComponent implements OnInit {
     private dataStore = inject(DataStore);
     linksUtils!: LinksUtils;
-    loading = true;
-    projects: Project[] = [];
+    loading = signal(true);
+    projects = signal<Project[]>([]);
 
     ngOnInit() {
         this.fetchProjects();
@@ -26,13 +33,13 @@ export class ProjectsPageComponent implements OnInit {
         this.dataStore.getProjects().subscribe({
             next: (res) => {
                 if (res.status == 200 && res.body !== null) {
-                    this.projects = res.body;
+                    this.projects.set(res.body);
                 }
 
-                this.loading = false;
+                this.loading.set(false);
             },
             error: () => {
-                this.loading = false;
+                this.loading.set(false);
             },
         });
     }

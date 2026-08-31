@@ -1,4 +1,10 @@
-import { Component, inject, OnInit } from "@angular/core";
+import {
+    Component,
+    inject,
+    signal,
+    OnInit,
+    ChangeDetectionStrategy,
+} from "@angular/core";
 import SkillElement, { SkillType } from "src/interfaces/SkillElement";
 import LinksUtils from "src/utils/LinksUtils";
 import { DataStore } from "src/stores/ProjectsStore";
@@ -7,13 +13,14 @@ import { DataStore } from "src/stores/ProjectsStore";
     selector: "app-skills-page",
     standalone: true,
     templateUrl: "./skills.html",
+    changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrls: ["./skills.scss"],
 })
 export class SkillsPageComponent implements OnInit {
     private dataStore = inject(DataStore);
     linksUtils!: LinksUtils;
-    loading = true;
-    skills: SkillElement[] = [];
+    loading = signal(true);
+    skills = signal<SkillElement[]>([]);
 
     ngOnInit() {
         this.fetchSkills();
@@ -36,18 +43,18 @@ export class SkillsPageComponent implements OnInit {
         this.dataStore.getSkills().subscribe({
             next: (res) => {
                 if (res.status == 200 && res.body !== null) {
-                    this.skills = res.body;
+                    this.skills.set(res.body);
                 }
 
-                this.loading = false;
+                this.loading.set(false);
             },
             error: () => {
-                this.loading = false;
+                this.loading.set(false);
             },
         });
     }
 
     private filter(type: SkillType) {
-        return this.skills.filter((s) => s.type == type);
+        return this.skills().filter((s) => s.type == type);
     }
 }

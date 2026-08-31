@@ -4,6 +4,7 @@ import {
     inject,
     QueryList,
     ViewChildren,
+    ChangeDetectionStrategy,
 } from "@angular/core";
 import { Router } from "@angular/router";
 import Nav from "src/interfaces/Nav";
@@ -12,6 +13,7 @@ import Nav from "src/interfaces/Nav";
     selector: "app-nav",
     standalone: true,
     templateUrl: "./nav.html",
+    changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrls: ["./nav.scss"],
 })
 export class NavComponent {

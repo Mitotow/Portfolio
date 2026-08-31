@@ -18,6 +18,7 @@
         "useDefineForClassFields": false,
         "esModuleInterop": true,
         "resolveJsonModule": true,
+        "types": ["node", "jasmine"],
         "paths": {
             "src/*": ["./src/*"],
             "@data/*": ["./data/*"]

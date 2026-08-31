@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { RouterOutlet } from "@angular/router";
 import { NavComponent } from "./components/nav/nav";
 
@@ -7,6 +7,7 @@ import { NavComponent } from "./components/nav/nav";
     selector: "app-root",
     imports: [CommonModule, RouterOutlet, NavComponent],
     templateUrl: "./app.html",
+    changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrl: "./app.scss",
 })
 export class App {

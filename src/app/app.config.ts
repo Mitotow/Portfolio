@@ -5,11 +5,11 @@ import {
 } from "@angular/core";
 import { provideRouter, withInMemoryScrolling } from "@angular/router";
 import { appRoutes } from "./app.routes";
-import { provideHttpClient } from "@angular/common/http";
+import { provideHttpClient, withXhr } from "@angular/common/http";
 
 export const appConfig: ApplicationConfig = {
     providers: [
-        provideHttpClient(),
+        provideHttpClient(withXhr()),
         provideBrowserGlobalErrorListeners(),
         provideZoneChangeDetection({ eventCoalescing: true }),
         provideRouter(
