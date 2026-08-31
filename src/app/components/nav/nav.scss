@@ -80,5 +80,23 @@ nav {
             }
         }
     }
+
+    .lang-switch {
+        color: $mint-green;
+        font-size: 14px;
+        font-weight: 600;
+        transition: transform ease-in-out 200ms;
+
+        &:hover,
+        &:focus {
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+
+        &:active {
+            transform: scale(0.9);
+        }
+    }
+
     background-color: $marian-blue;
 }

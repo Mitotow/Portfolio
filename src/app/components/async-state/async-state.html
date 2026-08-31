@@ -1,0 +1,11 @@
+@if (loading()) {
+<div class="centered-container">
+    <div class="loader"></div>
+</div>
+} @else if (empty()) {
+<div class="centered-container">
+    <ng-content select="[emptyState]"></ng-content>
+</div>
+} @else {
+<ng-content></ng-content>
+}

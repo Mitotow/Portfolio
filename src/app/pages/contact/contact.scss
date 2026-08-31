@@ -54,10 +54,7 @@
     .copyVerif {
         display: flex;
         padding: 20px;
-        transform: scale(0);
-        transition:
-            transform ease-in-out 150ms,
-            background ease-in-out 150ms;
+        transition: background ease-in-out 150ms;
         background-color: $marian-blue;
         color: $mint-green;
         justify-content: center;
@@ -68,10 +65,6 @@
         &--copied {
             background-color: $mint-green;
             color: $marian-blue;
-        }
-
-        &--show {
-            transform: scale(1);
         }
     }
 }

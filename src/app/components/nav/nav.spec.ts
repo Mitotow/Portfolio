@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { provideTranslateService } from "@ngx-translate/core";
 
 import { NavComponent } from "./nav";
 
@@ -9,6 +10,7 @@ describe("NavComponent", () => {
     beforeEach(() => {
         TestBed.configureTestingModule({
             imports: [NavComponent],
+            providers: [provideTranslateService({ lang: "fr", fallbackLang: "fr" })],
         });
         fixture = TestBed.createComponent(NavComponent);
         component = fixture.componentInstance;

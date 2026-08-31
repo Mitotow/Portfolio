@@ -2,11 +2,15 @@ import { TestBed } from "@angular/core/testing";
 import { App } from "./app";
 import { provideRouter } from "@angular/router";
 import { appRoutes } from "./app.routes";
+import { provideTranslateService } from "@ngx-translate/core";
 
 describe("AppComponent", () => {
     beforeEach(() =>
         TestBed.configureTestingModule({
-            providers: [provideRouter(appRoutes)],
+            providers: [
+                provideRouter(appRoutes),
+                provideTranslateService({ lang: "fr", fallbackLang: "fr" }),
+            ],
             imports: [App],
         })
     );

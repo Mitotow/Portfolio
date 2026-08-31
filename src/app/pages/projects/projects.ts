@@ -1,14 +1,11 @@
-import {
-    Component,
-    inject,
-    signal,
-    OnInit,
-    ChangeDetectionStrategy,
-} from "@angular/core";
-import Project from "src/interfaces/Project";
-import { NgStyle } from "@angular/common";
-import LinksUtils from "src/utils/LinksUtils";
-import { DataStore } from "src/stores/ProjectsStore";
+import { Component, inject, signal, ChangeDetectionStrategy } from "@angular/core";
+import { animate, query, stagger, style, transition, trigger } from "@angular/animations";
+import { TranslatePipe } from "@ngx-translate/core";
+import Project from "src/app/interfaces/Project";
+import { LinksUtils } from "src/app/utils/LinksUtils";
+import { DataStore } from "src/app/services/data.store";
+import { loadResource } from "src/app/services/load-resource";
+import { AsyncStateComponent } from "src/app/components/async-state/async-state";
 
 @Component({
     selector: "app-projects-page",
@@ -16,32 +13,33 @@ import { DataStore } from "src/stores/ProjectsStore";
     templateUrl: "./projects.html",
     styleUrls: ["./projects.scss"],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [NgStyle],
+    imports: [TranslatePipe, AsyncStateComponent],
+    animations: [
+        trigger("listStagger", [
+            transition("* => *", [
+                query(
+                    ":enter",
+                    [
+                        style({ opacity: 0, transform: "scale(0)" }),
+                        stagger(
+                            "250ms",
+                            animate("1s ease", style({ opacity: 1, transform: "scale(1)" }))
+                        ),
+                    ],
+                    { optional: true }
+                ),
+            ]),
+        ]),
+    ],
 })
-export class ProjectsPageComponent implements OnInit {
+export class ProjectsPageComponent {
     private dataStore = inject(DataStore);
-    linksUtils!: LinksUtils;
+    linksUtils = inject(LinksUtils);
     loading = signal(true);
     projects = signal<Project[]>([]);
 
-    ngOnInit() {
-        this.fetchProjects();
-        this.linksUtils = new LinksUtils();
-    }
-
-    fetchProjects() {
-        this.dataStore.getProjects().subscribe({
-            next: (res) => {
-                if (res.status == 200 && res.body !== null) {
-                    this.projects.set(res.body);
-                }
-
-                this.loading.set(false);
-            },
-            error: () => {
-                this.loading.set(false);
-            },
-        });
+    constructor() {
+        loadResource(this.loading, this.projects, this.dataStore.getProjects());
     }
 
     openSource = (url: string) => window.open(url, "_blank");

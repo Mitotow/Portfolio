@@ -3,8 +3,8 @@ import { inject, Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { Cacheable } from "ts-cacheable";
 import { constants } from "src/constants";
-import Project from "src/interfaces/Project";
-import SkillElement from "src/interfaces/SkillElement";
+import Project from "src/app/interfaces/Project";
+import SkillElement from "src/app/interfaces/SkillElement";
 
 @Injectable({
     providedIn: "root",

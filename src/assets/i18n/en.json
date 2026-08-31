@@ -1,0 +1,38 @@
+{
+    "nav": {
+        "home": "Home",
+        "skills": "Skills",
+        "projects": "Projects",
+        "contact": "Contact",
+        "lang": "Switch to French"
+    },
+    "home": {
+        "welcome": "Welcome to my portfolio!",
+        "tagline": "Engineering student specialized in <span>Cybersecurity</span>",
+        "githubAria": "My GitHub profile",
+        "linkedinAria": "My LinkedIn profile"
+    },
+    "projects": {
+        "title": "My Projects",
+        "sourceAria": "View source",
+        "emptyTitle": "Oops, I couldn't fetch the project list ...",
+        "emptyMessage": "I'll let you check out my"
+    },
+    "skills": {
+        "title": "My Skills",
+        "languages": "Languages",
+        "tools": "Tools",
+        "frameworks": "Frameworks",
+        "emptyTitle": "Oops, I couldn't fetch the skill list ...",
+        "emptyMessage": "I'll let you check out my"
+    },
+    "contact": {
+        "title": "Contact me!",
+        "emailLabel": "Email :",
+        "copyPrompt": "Click to copy",
+        "copied": "Copied!"
+    },
+    "notfound": {
+        "message": "- Oops... Page not found!"
+    }
+}

@@ -3,8 +3,6 @@
 .page {
     @include OnePage();
     @include PageTitle();
-    @include loader();
-    @include centeredContainer();
 
     .projects {
         display: flex;
@@ -23,9 +21,6 @@
             padding: 20px;
             background-color: rgba($color: $federal-blue, $alpha: 0.5);
             border-radius: 20px;
-
-            transform: scale(0);
-            animation: growIn 1s forwards;
 
             gap: 1vh;
 

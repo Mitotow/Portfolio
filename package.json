@@ -21,6 +21,8 @@
         "@angular/platform-browser": "^22.1.4",
         "@angular/router": "^22.1.4",
         "@fontsource/poppins": "^5.2.7",
+        "@ngx-translate/core": "^18.0.0",
+        "@ngx-translate/http-loader": "^18.0.0",
         "@types/node": "^20.19.19",
         "rxjs": "~7.8.0",
         "ts-cacheable": "^1.0.19",

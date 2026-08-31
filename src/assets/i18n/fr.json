@@ -1,0 +1,38 @@
+{
+    "nav": {
+        "home": "Accueil",
+        "skills": "Compétences",
+        "projects": "Projets",
+        "contact": "Contact",
+        "lang": "Passer en anglais"
+    },
+    "home": {
+        "welcome": "Bienvenue sur mon portfolio !",
+        "tagline": "Étudiant ingénieur spécialisé en <span>Cybersécurité</span>",
+        "githubAria": "Mon profil GitHub",
+        "linkedinAria": "Mon profil Linkedin"
+    },
+    "projects": {
+        "title": "Mes Projets",
+        "sourceAria": "Accéder aux sources",
+        "emptyTitle": "Aïe, je n'ai pas réussi à récupérer la liste des projets ...",
+        "emptyMessage": "Je vous laisse aller voir directement mon"
+    },
+    "skills": {
+        "title": "Mes Compétences",
+        "languages": "Langages",
+        "tools": "Outils",
+        "frameworks": "Frameworks",
+        "emptyTitle": "Aïe, je n'ai pas réussi à récupérer la liste des compétences ...",
+        "emptyMessage": "Je vous laisse aller voir directement mon"
+    },
+    "contact": {
+        "title": "Contactez-moi !",
+        "emailLabel": "Email :",
+        "copyPrompt": "Cliquez pour copier",
+        "copied": "Copié !"
+    },
+    "notfound": {
+        "message": "- Oupsss... Page introuvable !"
+    }
+}

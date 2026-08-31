@@ -1,13 +1,15 @@
-import {
-    Component,
-    inject,
-    signal,
-    OnInit,
-    ChangeDetectionStrategy,
-} from "@angular/core";
-import SkillElement, { SkillType } from "src/interfaces/SkillElement";
-import LinksUtils from "src/utils/LinksUtils";
-import { DataStore } from "src/stores/ProjectsStore";
+import { Component, inject, signal, computed, ChangeDetectionStrategy } from "@angular/core";
+import { TranslatePipe } from "@ngx-translate/core";
+import SkillElement, { SkillType } from "src/app/interfaces/SkillElement";
+import { LinksUtils } from "src/app/utils/LinksUtils";
+import { DataStore } from "src/app/services/data.store";
+import { loadResource } from "src/app/services/load-resource";
+import { AsyncStateComponent } from "src/app/components/async-state/async-state";
+
+interface SkillGroup {
+    titleKey: string;
+    items: SkillElement[];
+}
 
 @Component({
     selector: "app-skills-page",
@@ -15,43 +17,22 @@ import { DataStore } from "src/stores/ProjectsStore";
     templateUrl: "./skills.html",
     changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrls: ["./skills.scss"],
+    imports: [TranslatePipe, AsyncStateComponent],
 })
-export class SkillsPageComponent implements OnInit {
+export class SkillsPageComponent {
     private dataStore = inject(DataStore);
-    linksUtils!: LinksUtils;
+    linksUtils = inject(LinksUtils);
     loading = signal(true);
     skills = signal<SkillElement[]>([]);
 
-    ngOnInit() {
-        this.fetchSkills();
-        this.linksUtils = new LinksUtils();
-    }
+    groups = computed<SkillGroup[]>(() => [
+        { titleKey: "skills.languages", items: this.filter(SkillType.LANGUAGE) },
+        { titleKey: "skills.tools", items: this.filter(SkillType.TOOL) },
+        { titleKey: "skills.frameworks", items: this.filter(SkillType.FRAMEWORK) },
+    ]);
 
-    getLanguages() {
-        return this.filter(SkillType.LANGUAGE);
-    }
-
-    getTools() {
-        return this.filter(SkillType.TOOL);
-    }
-
-    getFrameworks() {
-        return this.filter(SkillType.FRAMEWORK);
-    }
-
-    fetchSkills() {
-        this.dataStore.getSkills().subscribe({
-            next: (res) => {
-                if (res.status == 200 && res.body !== null) {
-                    this.skills.set(res.body);
-                }
-
-                this.loading.set(false);
-            },
-            error: () => {
-                this.loading.set(false);
-            },
-        });
+    constructor() {
+        loadResource(this.loading, this.skills, this.dataStore.getSkills());
     }
 
     private filter(type: SkillType) {

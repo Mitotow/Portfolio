@@ -7,7 +7,8 @@ import {
     ChangeDetectionStrategy,
 } from "@angular/core";
 import { Router } from "@angular/router";
-import Nav from "src/interfaces/Nav";
+import { TranslatePipe, TranslateService } from "@ngx-translate/core";
+import Nav from "src/app/interfaces/Nav";
 
 @Component({
     selector: "app-nav",
@@ -15,34 +16,36 @@ import Nav from "src/interfaces/Nav";
     templateUrl: "./nav.html",
     changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrls: ["./nav.scss"],
+    imports: [TranslatePipe],
 })
 export class NavComponent {
     private router = inject(Router);
+    protected translate = inject(TranslateService);
     @ViewChildren("navButton") buttons!: QueryList<
         ElementRef<HTMLButtonElement>
     >;
 
     navs: Nav[] = [
         {
-            label: "Accueil",
+            labelKey: "nav.home",
             url: "/",
             icon: "/assets/nav/home.svg",
             alt: "home",
         },
         {
-            label: "Compétences",
+            labelKey: "nav.skills",
             url: "/skills",
             icon: "/assets/nav/skills.svg",
             alt: "skills",
         },
         {
-            label: "Projets",
+            labelKey: "nav.projects",
             url: "/projects",
             icon: "/assets/nav/projects.svg",
             alt: "projects",
         },
         {
-            label: "Contact",
+            labelKey: "nav.contact",
             url: "/contact",
             icon: "/assets/nav/contact.svg",
             alt: "contact",
@@ -50,11 +53,14 @@ export class NavComponent {
     ];
 
     handle(id: string, path: string) {
-        this.router.navigate([path]);
-        setTimeout(() => {
+        this.router.navigate([path]).then(() => {
             this.buttons
                 .find((b) => b.nativeElement.id === id)
                 ?.nativeElement.blur();
-        }, 100);
+        });
+    }
+
+    toggleLang() {
+        this.translate.use(this.translate.currentLang() === "fr" ? "en" : "fr");
     }
 }
