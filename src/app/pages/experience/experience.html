@@ -1,0 +1,39 @@
+<div class="page">
+    <h1>{{ "experience.title" | translate }}</h1>
+    <p class="bio">{{ "experience.bio" | translate }}</p>
+    <div class="timeline" [@listStagger]="steps.length">
+        @for (step of steps; track step.institution) {
+        <div class="timeline-step">
+            <div class="timeline-step-dot"></div>
+            <div class="timeline-step-content">
+                <div class="timeline-step-text">
+                    <span class="timeline-step-period">{{ step.period }}</span>
+                    <h2>{{ step.institution }}</h2>
+                    <h3>{{ text(step.title) }}</h3>
+                    <p>{{ text(step.description) }}</p>
+                </div>
+                <div class="timeline-step-image">
+                    <img [src]="step.image" [alt]="step.institution" />
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+
+    <div class="section-separator"></div>
+    <h2 class="section-title">{{ "experience.workTitle" | translate }}</h2>
+    <div class="work-list" [@listStagger]="workExperience.length">
+        @for (job of workExperience; track job.title.fr) {
+        <div class="work-card">
+            <div class="work-card-image">
+                <img [src]="job.image" [alt]="text(job.title)" />
+            </div>
+            <div class="work-card-body">
+                <h3>{{ text(job.title) }}</h3>
+                <h4>{{ job.subtitle }}</h4>
+                <p>{{ text(job.description) }}</p>
+            </div>
+        </div>
+        }
+    </div>
+</div>

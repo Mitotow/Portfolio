@@ -4,4 +4,5 @@ export default interface Project {
     text: string;
     git: string;
     used: string[];
+    image: string;
 }

@@ -81,6 +81,12 @@ nav {
         }
     }
 
+    .nav-divider {
+        width: 1px;
+        height: 60%;
+        background-color: rgba($color: $mint-green, $alpha: 0.3);
+    }
+
     .lang-switch {
         color: $mint-green;
         font-size: 14px;

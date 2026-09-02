@@ -1,6 +1,7 @@
 {
     "nav": {
         "home": "Accueil",
+        "experience": "Expérience",
         "skills": "Compétences",
         "projects": "Projets",
         "contact": "Contact",
@@ -31,6 +32,11 @@
         "emailLabel": "Email :",
         "copyPrompt": "Cliquez pour copier",
         "copied": "Copié !"
+    },
+    "experience": {
+        "title": "Mon Parcours",
+        "bio": "PLACEHOLDER — courte présentation de toi : qui tu es, ce qui te passionne, ce que tu cherches. À remplacer dans src/assets/i18n/fr.json.",
+        "workTitle": "Expérience professionnelle"
     },
     "notfound": {
         "message": "- Oupsss... Page introuvable !"

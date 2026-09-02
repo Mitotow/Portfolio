@@ -1,28 +1,33 @@
 <div class="page">
     <div class="element">
         <h1>{{ "skills.title" | translate }}</h1>
-        <app-async-state [loading]="loading()" [empty]="skills().length === 0">
-            <div emptyState>
-                <h2>{{ "skills.emptyTitle" | translate }}</h2>
-                <h3>
-                    {{ "skills.emptyMessage" | translate }}
-                    <button (click)="linksUtils.openGithub()">Github</button>
-                </h3>
-            </div>
-            <div class="container">
-                @for (group of groups(); track group.titleKey; let i = $index) {
-                <div class="container--wiuse" [style.animation-delay.s]="0.2 + i * 0.2">
-                    <h3>{{ group.titleKey | translate }}</h3>
-                    @for (item of group.items; track item.name) {
-                    <div class="container--wiuse--use">
-                        <i [class]="item.iconClass"></i>
-                        <div class="container--wiuse--use--sep"></div>
-                        <span [textContent]="item.name"></span>
+        @if (skills.length === 0) {
+        <div class="centered-container">
+            <h2>{{ "skills.emptyTitle" | translate }}</h2>
+            <h3>
+                {{ "skills.emptyMessage" | translate }}
+                <button (click)="linksUtils.openGithub()">Github</button>
+            </h3>
+        </div>
+        } @else {
+        <div class="skills-cloud">
+            @for (group of groups; track group.type; let last = $last) {
+            <div class="skills-group">
+                <h3 class="skills-group-title">{{ group.titleKey | translate }}</h3>
+                <div class="skills-row">
+                    @for (s of group.items; track s.name; let i = $index) {
+                    <div class="skill-orb" [style.--i]="i">
+                        <i [class]="s.iconClass"></i>
+                        <span class="skill-orb-tooltip" [textContent]="s.name"></span>
                     </div>
                     }
                 </div>
-                }
             </div>
-        </app-async-state>
+            @if (!last) {
+            <div class="skills-separator"></div>
+            }
+            }
+        </div>
+        }
     </div>
 </div>

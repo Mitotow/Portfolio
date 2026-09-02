@@ -33,6 +33,12 @@ export class NavComponent {
             alt: "home",
         },
         {
+            labelKey: "nav.experience",
+            url: "/experience",
+            icon: "/assets/nav/experience.svg",
+            alt: "experience",
+        },
+        {
             labelKey: "nav.skills",
             url: "/skills",
             icon: "/assets/nav/skills.svg",

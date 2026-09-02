@@ -1,16 +1,21 @@
 <div class="page">
     <h1>{{ "projects.title" | translate }}</h1>
-    <app-async-state [loading]="loading()" [empty]="projects().length === 0">
-        <div emptyState>
-            <h2>{{ "projects.emptyTitle" | translate }}</h2>
-            <h3>
-                {{ "projects.emptyMessage" | translate }}
-                <button (click)="linksUtils.openGithub()">Github</button>
-            </h3>
-        </div>
-        <div class="projects" [@listStagger]="projects().length">
-            @for (p of projects(); track p) {
-            <div class="projects-project">
+    @if (projects.length === 0) {
+    <div class="centered-container">
+        <h2>{{ "projects.emptyTitle" | translate }}</h2>
+        <h3>
+            {{ "projects.emptyMessage" | translate }}
+            <button (click)="linksUtils.openGithub()">Github</button>
+        </h3>
+    </div>
+    } @else {
+    <div class="projects" [@listStagger]="projects.length">
+        @for (p of projects; track p) {
+        <div class="projects-project">
+            <div class="projects-project-image">
+                <img [src]="p.image" [alt]="p.title" />
+            </div>
+            <div class="projects-project-body">
                 <div class="projects-project-header">
                     <div class="projects-project-header-text">
                         <h2>{{ p.title }}</h2>
@@ -30,7 +35,8 @@
                     }
                 </div>
             </div>
-            }
         </div>
-    </app-async-state>
+        }
+    </div>
+    }
 </div>

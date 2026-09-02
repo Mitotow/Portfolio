@@ -1,6 +1,7 @@
 {
     "nav": {
         "home": "Home",
+        "experience": "Experience",
         "skills": "Skills",
         "projects": "Projects",
         "contact": "Contact",
@@ -28,9 +29,14 @@
     },
     "contact": {
         "title": "Contact me!",
-        "emailLabel": "Email :",
+        "emailLabel": "Email:",
         "copyPrompt": "Click to copy",
         "copied": "Copied!"
+    },
+    "experience": {
+        "title": "My Background",
+        "bio": "PLACEHOLDER — short presentation of yourself: who you are, what you're passionate about, what you're looking for. Replace it in src/assets/i18n/en.json.",
+        "workTitle": "Professional Experience"
     },
     "notfound": {
         "message": "- Oops... Page not found!"

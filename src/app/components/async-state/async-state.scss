@@ -1,6 +1,0 @@
-@use "../../../styles.scss" as *;
-
-:host {
-    @include loader();
-    @include centeredContainer();
-}

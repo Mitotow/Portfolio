@@ -1,12 +1,11 @@
-import { Component, inject, signal, computed, ChangeDetectionStrategy } from "@angular/core";
+import { Component, inject, ChangeDetectionStrategy } from "@angular/core";
 import { TranslatePipe } from "@ngx-translate/core";
-import SkillElement, { SkillType } from "src/app/interfaces/SkillElement";
 import { LinksUtils } from "src/app/utils/LinksUtils";
-import { DataStore } from "src/app/services/data.store";
-import { loadResource } from "src/app/services/load-resource";
-import { AsyncStateComponent } from "src/app/components/async-state/async-state";
+import { SKILLS } from "src/app/data/skills.data";
+import SkillElement, { SkillType } from "src/app/interfaces/SkillElement";
 
 interface SkillGroup {
+    type: SkillType;
     titleKey: string;
     items: SkillElement[];
 }
@@ -17,25 +16,23 @@ interface SkillGroup {
     templateUrl: "./skills.html",
     changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrls: ["./skills.scss"],
-    imports: [TranslatePipe, AsyncStateComponent],
+    imports: [TranslatePipe],
 })
 export class SkillsPageComponent {
-    private dataStore = inject(DataStore);
     linksUtils = inject(LinksUtils);
-    loading = signal(true);
-    skills = signal<SkillElement[]>([]);
+    skills = SKILLS;
 
-    groups = computed<SkillGroup[]>(() => [
-        { titleKey: "skills.languages", items: this.filter(SkillType.LANGUAGE) },
-        { titleKey: "skills.tools", items: this.filter(SkillType.TOOL) },
-        { titleKey: "skills.frameworks", items: this.filter(SkillType.FRAMEWORK) },
-    ]);
-
-    constructor() {
-        loadResource(this.loading, this.skills, this.dataStore.getSkills());
-    }
-
-    private filter(type: SkillType) {
-        return this.skills().filter((s) => s.type == type);
-    }
+    groups: SkillGroup[] = (
+        [
+            { type: SkillType.LANGUAGE, titleKey: "skills.languages" },
+            { type: SkillType.TOOL, titleKey: "skills.tools" },
+            { type: SkillType.FRAMEWORK, titleKey: "skills.frameworks" },
+        ] as const
+    )
+        .map(({ type, titleKey }) => ({
+            type,
+            titleKey,
+            items: this.skills.filter((s) => s.type === type),
+        }))
+        .filter((group) => group.items.length > 0);
 }

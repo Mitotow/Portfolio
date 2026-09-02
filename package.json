@@ -25,7 +25,6 @@
         "@ngx-translate/http-loader": "^18.0.0",
         "@types/node": "^20.19.19",
         "rxjs": "~7.8.0",
-        "ts-cacheable": "^1.0.19",
         "tslib": "^2.3.0",
         "zone.js": "~0.15.1"
     },
