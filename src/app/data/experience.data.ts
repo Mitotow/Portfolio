@@ -41,7 +41,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
         subtitle: "2024 - 2028",
         description: {
             fr: "Développement et maintenance d'applications Java, participation aux rituels agiles et collaboration technique pour répondre aux besoins métiers du groupe La Poste.",
-            en: "PLACEHOLDER — briefly describe your mission, the context and what you achieved.",
+            en: "PLACEHOLDER",
         },
     },
 ];

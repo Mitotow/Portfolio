@@ -124,12 +124,16 @@
 
         &-image {
             flex: 0 0 220px;
+            padding: 20px;
 
             img {
                 display: block;
                 width: 100%;
                 height: 100%;
-                object-fit: cover;
+                // Company logos must keep their exact proportions, so the whole
+                // mark is scaled down to fit the box. Never `cover` here: it
+                // crops a wide logo instead of fitting it.
+                object-fit: contain;
             }
         }
 

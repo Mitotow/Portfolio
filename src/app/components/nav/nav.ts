@@ -1,11 +1,4 @@
-import {
-    Component,
-    ElementRef,
-    inject,
-    QueryList,
-    ViewChildren,
-    ChangeDetectionStrategy,
-} from "@angular/core";
+import { Component, inject, ChangeDetectionStrategy } from "@angular/core";
 import { Router } from "@angular/router";
 import { TranslatePipe, TranslateService } from "@ngx-translate/core";
 import Nav from "src/app/interfaces/Nav";
@@ -21,9 +14,6 @@ import Nav from "src/app/interfaces/Nav";
 export class NavComponent {
     private router = inject(Router);
     protected translate = inject(TranslateService);
-    @ViewChildren("navButton") buttons!: QueryList<
-        ElementRef<HTMLButtonElement>
-    >;
 
     navs: Nav[] = [
         {
@@ -58,12 +48,8 @@ export class NavComponent {
         },
     ];
 
-    handle(id: string, path: string) {
-        this.router.navigate([path]).then(() => {
-            this.buttons
-                .find((b) => b.nativeElement.id === id)
-                ?.nativeElement.blur();
-        });
+    handle(path: string) {
+        this.router.navigate([path]);
     }
 
     toggleLang() {

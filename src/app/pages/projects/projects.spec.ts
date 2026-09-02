@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from "@angular/core/testing";
-import { provideNoopAnimations } from "@angular/platform-browser/animations";
 import { provideTranslateService } from "@ngx-translate/core";
 
 import { ProjectsPageComponent } from "./projects";
@@ -13,7 +12,6 @@ describe("ProjectsPageComponent", () => {
             imports: [ProjectsPageComponent],
             providers: [
                 provideTranslateService({ lang: "fr", fallbackLang: "fr" }),
-                provideNoopAnimations(),
             ],
         });
         fixture = TestBed.createComponent(ProjectsPageComponent);

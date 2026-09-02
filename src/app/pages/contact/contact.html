@@ -14,9 +14,9 @@
         </div>
         <div
             class="copyVerif"
+            [class]="stateClass()"
             [class.copyVerif--copied]="isCopied()"
-            [@toast]="state()"
-            (@toast.done)="onToastDone($event)"
+            (animationend)="onToastDone($event)"
             [textContent]="alertTextKey() | translate"></div>
     </div>
 </div>

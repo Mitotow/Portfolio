@@ -1,5 +1,16 @@
 @use "../../../styles.scss" as *;
 
+@keyframes projectsCardEnter {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 .page {
     @include OnePage();
     @include PageTitle();
@@ -90,6 +101,14 @@
                     background-color: rgba($color: $marian-blue, $alpha: 0.75);
                     border-radius: 10px;
                 }
+            }
+
+            // Applied by `animate.enter` on each card and removed once the
+            // animation ends. `both` holds the from-state through the
+            // per-card delay, which is what `stagger()` used to do.
+            &--enter {
+                animation: projectsCardEnter 1s ease both;
+                animation-delay: calc(var(--enter-index, 0) * 250ms);
             }
         }
     }

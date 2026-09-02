@@ -9,17 +9,22 @@
         </h3>
     </div>
     } @else {
-    <div class="projects" [@listStagger]="projects.length">
+    <div class="projects">
         @for (p of projects; track p) {
-        <div class="projects-project">
+        <div
+            class="projects-project"
+            animate.enter="projects-project--enter"
+            [style.--enter-index]="$index">
             <div class="projects-project-image">
-                <img [src]="p.image" [alt]="p.title" />
+                <img
+                    [src]="p.image ?? '/assets/projects/placeholder.svg'"
+                    [alt]="p.title" />
             </div>
             <div class="projects-project-body">
                 <div class="projects-project-header">
                     <div class="projects-project-header-text">
                         <h2>{{ p.title }}</h2>
-                        <h3>{{ p.subtitle }}</h3>
+                        <h3>{{ text(p.subtitle) }}</h3>
                     </div>
                     <button
                         (click)="openSource(p.git)"
@@ -27,8 +32,16 @@
                         [attr.aria-label]="'projects.sourceAria' | translate">
                         <img src="/assets/projects/source.svg" alt="" />
                     </button>
+                    @if (p.deployment) {
+                    <button
+                        (click)="openSource(p.deployment)"
+                        (keydown.enter)="openSource(p.deployment)"
+                        [attr.aria-label]="'projects.deploymentAria' | translate">
+                        <img src="/assets/projects/web.svg" alt="" />
+                    </button>
+                    }
                 </div>
-                <p [textContent]="p.text"></p>
+                <p [textContent]="text(p.text)"></p>
                 <div class="projects-project-utils">
                     @for (util of p.used; track util) {
                     <span [textContent]="util"></span>
