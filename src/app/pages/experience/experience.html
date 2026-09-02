@@ -1,9 +1,12 @@
 <div class="page">
     <h1>{{ "experience.title" | translate }}</h1>
     <p class="bio">{{ "experience.bio" | translate }}</p>
-    <div class="timeline" [@listStagger]="steps.length">
+    <div class="timeline">
         @for (step of steps; track step.institution) {
-        <div class="timeline-step">
+        <div
+            class="timeline-step"
+            animate.enter="timeline-step--enter"
+            [style.--enter-index]="$index">
             <div class="timeline-step-dot"></div>
             <div class="timeline-step-content">
                 <div class="timeline-step-text">
@@ -22,9 +25,12 @@
 
     <div class="section-separator"></div>
     <h2 class="section-title">{{ "experience.workTitle" | translate }}</h2>
-    <div class="work-list" [@listStagger]="workExperience.length">
+    <div class="work-list">
         @for (job of workExperience; track job.title.fr) {
-        <div class="work-card">
+        <div
+            class="work-card"
+            animate.enter="work-card--enter"
+            [style.--enter-index]="$index">
             <div class="work-card-image">
                 <img [src]="job.image" [alt]="text(job.title)" />
             </div>

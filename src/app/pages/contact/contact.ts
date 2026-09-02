@@ -1,19 +1,17 @@
-import { Component, inject, signal, computed, ChangeDetectionStrategy } from "@angular/core";
+import {
+    Component,
+    inject,
+    signal,
+    computed,
+    ChangeDetectionStrategy,
+} from "@angular/core";
 import { Clipboard } from "@angular/cdk/clipboard";
 import { TranslatePipe } from "@ngx-translate/core";
-import {
-    animate,
-    AnimationEvent,
-    keyframes,
-    state,
-    style,
-    transition,
-    trigger,
-} from "@angular/animations";
 
-// Two equivalent "copied" states, alternated on every copy, so a fresh
-// click always produces a real state change (and therefore replays the
-// animation) even if the previous copy sequence already finished.
+// Two equivalent "copied" states, alternated on every copy. Each maps to its
+// own @keyframes name, so a fresh click always changes animation-name and
+// therefore restarts the animation - re-applying the same name does not
+// replay a CSS animation, even if the previous sequence already finished.
 type ToastState = "idle" | "hover" | "copiedA" | "copiedB";
 
 @Component({
@@ -23,29 +21,6 @@ type ToastState = "idle" | "hover" | "copiedA" | "copiedB";
     changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrls: ["./contact.scss"],
     imports: [TranslatePipe],
-    animations: [
-        trigger("toast", [
-            state("idle", style({ transform: "scale(0)" })),
-            state("hover", style({ transform: "scale(1)" })),
-            state("copiedA", style({ transform: "scale(0)" })),
-            state("copiedB", style({ transform: "scale(0)" })),
-            transition("* => hover", animate("150ms ease-in-out")),
-            transition("* => idle", animate("150ms ease-in-out")),
-            // Copying pops the toast in, holds it, then collapses it again -
-            // the 1000ms hold replaces a hand-rolled setTimeout with the
-            // animation engine's own timing.
-            transition("* => copiedA, * => copiedB", [
-                style({ transform: "scale(1)" }),
-                animate(
-                    "1150ms",
-                    keyframes([
-                        style({ transform: "scale(1)", offset: 0.87 }),
-                        style({ transform: "scale(0)", offset: 1 }),
-                    ])
-                ),
-            ]),
-        ]),
-    ],
 })
 export class ContactPageComponent {
     private clip = inject(Clipboard);
@@ -54,6 +29,7 @@ export class ContactPageComponent {
     state = signal<ToastState>("idle");
     alertTextKey = signal("contact.copyPrompt");
     isCopied = computed(() => this.state().startsWith("copied"));
+    stateClass = computed(() => `copyVerif--${this.state()}`);
 
     onMouseEnter() {
         if (this.isCopied()) return;
@@ -68,15 +44,21 @@ export class ContactPageComponent {
 
     onCopy(text: string) {
         this.clip.copy(text);
-        this.lastCopiedState = this.lastCopiedState === "copiedA" ? "copiedB" : "copiedA";
+        this.lastCopiedState =
+            this.lastCopiedState === "copiedA" ? "copiedB" : "copiedA";
         this.state.set(this.lastCopiedState);
         this.alertTextKey.set("contact.copied");
     }
 
-    // Once the "copied" pop+hold+collapse animation actually finishes,
-    // release the guard so hovering again shows the prompt tooltip.
+    // Once the "copied" pop+hold+collapse animation actually finishes, release
+    // the guard so hovering again shows the prompt tooltip. The copy sequence is
+    // the only keyframe animation on this element - hover and idle are
+    // transitions, which fire transitionend instead - so the copied guard is
+    // enough to identify it. Do not match on event.animationName: Angular
+    // prefixes @keyframes names with the component's style-encapsulation
+    // attribute, so the name seen here is never the one authored in the SCSS.
     onToastDone(event: AnimationEvent) {
-        if (event.toState === "copiedA" || event.toState === "copiedB") {
+        if (event.target === event.currentTarget && this.isCopied()) {
             this.state.set("idle");
         }
     }

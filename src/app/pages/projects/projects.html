@@ -9,9 +9,12 @@
         </h3>
     </div>
     } @else {
-    <div class="projects" [@listStagger]="projects.length">
+    <div class="projects">
         @for (p of projects; track p) {
-        <div class="projects-project">
+        <div
+            class="projects-project"
+            animate.enter="projects-project--enter"
+            [style.--enter-index]="$index">
             <div class="projects-project-image">
                 <img [src]="p.image" [alt]="p.title" />
             </div>
