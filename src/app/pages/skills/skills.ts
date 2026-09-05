@@ -1,53 +1,38 @@
-import { Component, inject, OnInit } from "@angular/core";
-import SkillElement, { SkillType } from "src/interfaces/SkillElement";
-import LinksUtils from "src/utils/LinksUtils";
-import { DataStore } from "src/stores/ProjectsStore";
+import { Component, inject, ChangeDetectionStrategy } from "@angular/core";
+import { TranslatePipe } from "@ngx-translate/core";
+import { LinksUtils } from "src/app/utils/LinksUtils";
+import { SKILLS } from "src/app/data/skills.data";
+import SkillElement, { SkillType } from "src/app/interfaces/SkillElement";
+
+interface SkillGroup {
+    type: SkillType;
+    titleKey: string;
+    items: SkillElement[];
+}
 
 @Component({
     selector: "app-skills-page",
     standalone: true,
     templateUrl: "./skills.html",
+    changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrls: ["./skills.scss"],
+    imports: [TranslatePipe],
 })
-export class SkillsPageComponent implements OnInit {
-    private dataStore = inject(DataStore);
-    linksUtils!: LinksUtils;
-    loading = true;
-    skills: SkillElement[] = [];
+export class SkillsPageComponent {
+    linksUtils = inject(LinksUtils);
+    skills = SKILLS;
 
-    ngOnInit() {
-        this.fetchSkills();
-        this.linksUtils = new LinksUtils();
-    }
-
-    getLanguages() {
-        return this.filter(SkillType.LANGUAGE);
-    }
-
-    getTools() {
-        return this.filter(SkillType.TOOL);
-    }
-
-    getFrameworks() {
-        return this.filter(SkillType.FRAMEWORK);
-    }
-
-    fetchSkills() {
-        this.dataStore.getSkills().subscribe({
-            next: (res) => {
-                if (res.status == 200 && res.body !== null) {
-                    this.skills = res.body;
-                }
-
-                this.loading = false;
-            },
-            error: () => {
-                this.loading = false;
-            },
-        });
-    }
-
-    private filter(type: SkillType) {
-        return this.skills.filter((s) => s.type == type);
-    }
+    groups: SkillGroup[] = (
+        [
+            { type: SkillType.LANGUAGE, titleKey: "skills.languages" },
+            { type: SkillType.TOOL, titleKey: "skills.tools" },
+            { type: SkillType.FRAMEWORK, titleKey: "skills.frameworks" },
+        ] as const
+    )
+        .map(({ type, titleKey }) => ({
+            type,
+            titleKey,
+            items: this.skills.filter((s) => s.type === type),
+        }))
+        .filter((group) => group.items.length > 0);
 }

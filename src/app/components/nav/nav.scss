@@ -1,5 +1,20 @@
 @use "../../../styles.scss" as *;
 
+// Shared by the pointer-hover and keyboard-focus states below.
+@mixin navButtonActive {
+    img {
+        cursor: pointer;
+        transform: scale(1);
+
+        -webkit-filter: drop-shadow(0px 2px 4px $dark-purple);
+        filter: drop-shadow(0px 2px 4px $dark-purple);
+
+        ~ span {
+            opacity: 1;
+        }
+    }
+}
+
 nav {
     position: fixed;
     z-index: 999;
@@ -48,6 +63,12 @@ nav {
             padding: 10px;
             opacity: 0;
 
+            // The label is decorative. opacity: 0 still hit-tests, so without
+            // this an invisible label floating above the bar swallows taps
+            // meant for the page behind it - and, being inside the button,
+            // navigates.
+            pointer-events: none;
+
             font-size: 16px;
 
             color: $mint-green;
@@ -60,18 +81,19 @@ nav {
             transition: opacity ease-in-out 250ms;
         }
 
-        &:focus,
-        &:hover {
-            img {
-                cursor: pointer;
-                transform: scale(1);
-
-                -webkit-filter: drop-shadow(0px 2px 4px $dark-purple);
-                filter: drop-shadow(0px 2px 4px $dark-purple);
-                ~ span {
-                    opacity: 1;
-                }
+        // Touch devices report `hover: none` and emulate a sticky :hover that
+        // survives the tap, which would leave the label stuck on screen.
+        @media (hover: hover) {
+            &:hover {
+                @include navButtonActive;
             }
+        }
+
+        // :focus-visible, not :focus - a tap focuses the button, and :focus
+        // would keep the label up afterwards. :focus-visible matches keyboard
+        // focus only, so keyboard users still get the label.
+        &:focus-visible {
+            @include navButtonActive;
         }
 
         &:active {
@@ -80,5 +102,35 @@ nav {
             }
         }
     }
+
+    .nav-divider {
+        width: 1px;
+        height: 60%;
+        background-color: rgba($color: $mint-green, $alpha: 0.3);
+    }
+
+    .lang-switch {
+        color: $mint-green;
+        font-size: 14px;
+        font-weight: 600;
+        transition: transform ease-in-out 200ms;
+
+        @media (hover: hover) {
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.1);
+            }
+        }
+
+        &:focus-visible {
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+
+        &:active {
+            transform: scale(0.9);
+        }
+    }
+
     background-color: $marian-blue;
 }

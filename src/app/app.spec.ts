@@ -2,12 +2,16 @@ import { TestBed } from "@angular/core/testing";
 import { App } from "./app";
 import { provideRouter } from "@angular/router";
 import { appRoutes } from "./app.routes";
+import { provideTranslateService } from "@ngx-translate/core";
 
 describe("AppComponent", () => {
     beforeEach(() =>
         TestBed.configureTestingModule({
-            providers: [provideRouter(appRoutes)],
-            declarations: [App],
+            providers: [
+                provideRouter(appRoutes),
+                provideTranslateService({ lang: "fr", fallbackLang: "fr" }),
+            ],
+            imports: [App],
         })
     );
 
@@ -23,12 +27,11 @@ describe("AppComponent", () => {
         expect(app.title).toEqual("portfolio");
     });
 
-    it("should render title", () => {
+    it("should render the nav and router outlet", () => {
         const fixture = TestBed.createComponent(App);
         fixture.detectChanges();
         const compiled = fixture.nativeElement as HTMLElement;
-        expect(compiled.querySelector(".content span")?.textContent).toContain(
-            "portfolio app is running!"
-        );
+        expect(compiled.querySelector("app-nav")).toBeTruthy();
+        expect(compiled.querySelector("router-outlet")).toBeTruthy();
     });
 });

@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { provideTranslateService } from "@ngx-translate/core";
 
 import { ProjectsPageComponent } from "./projects";
 
@@ -9,6 +10,9 @@ describe("ProjectsPageComponent", () => {
     beforeEach(() => {
         TestBed.configureTestingModule({
             imports: [ProjectsPageComponent],
+            providers: [
+                provideTranslateService({ lang: "fr", fallbackLang: "fr" }),
+            ],
         });
         fixture = TestBed.createComponent(ProjectsPageComponent);
         component = fixture.componentInstance;

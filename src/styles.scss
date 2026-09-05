@@ -4,6 +4,7 @@ $federal-blue: #0f084bff;
 $marian-blue: #26408bff;
 $light-blue: #a6cfd5ff;
 $mint-green: #c2e7d9ff;
+$accent: #ffb703ff;
 
 @import "@fontsource/poppins/500.css";
 @import "@fontsource/poppins/600.css";
@@ -138,17 +139,6 @@ $mint-green: #c2e7d9ff;
     }
 }
 
-@mixin leftSlideInMixin($v) {
-    @keyframes leftSlideIn {
-        from {
-            left: -100%;
-        }
-        to {
-            left: $v;
-        }
-    }
-}
-
 @keyframes leftSlideIn {
     from {
         left: -100%;
@@ -182,6 +172,16 @@ $mint-green: #c2e7d9ff;
     }
     to {
         transform: scale(1);
+    }
+}
+
+@keyframes floatBob {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
     }
 }
 

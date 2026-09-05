@@ -1,0 +1,45 @@
+{
+    "nav": {
+        "home": "Home",
+        "experience": "Experience",
+        "skills": "Skills",
+        "projects": "Projects",
+        "contact": "Contact",
+        "lang": "Switch to French"
+    },
+    "home": {
+        "welcome": "Welcome to my portfolio!",
+        "tagline": "Engineering student specialized in <span>Cybersecurity</span>",
+        "githubAria": "My GitHub profile",
+        "linkedinAria": "My LinkedIn profile"
+    },
+    "projects": {
+        "title": "My Projects",
+        "sourceAria": "View source",
+        "deploymentAria": "Visit website",
+        "emptyTitle": "Oops, I couldn't fetch the project list…",
+        "emptyMessage": "I'll let you check out my"
+    },
+    "skills": {
+        "title": "My Skills",
+        "languages": "Languages",
+        "tools": "Tools",
+        "frameworks": "Frameworks",
+        "emptyTitle": "Oops, I couldn't fetch the skills list…",
+        "emptyMessage": "I'll let you check out my"
+    },
+    "contact": {
+        "title": "Contact me!",
+        "emailLabel": "Email:",
+        "copyPrompt": "Click to copy",
+        "copied": "Copied!"
+    },
+    "experience": {
+        "title": "My Background",
+        "bio": "From an STI2D baccalaureate to engineering school, every step added a layer: the foundations of development and electronics, then the full software lifecycle, and today embedded systems and cybersecurity. Alongside that, my work-study contract at CGI confronts me with the real world: Java applications used daily by the teams of the La Poste group.",
+        "workTitle": "Professional Experience"
+    },
+    "notfound": {
+        "message": "- Oops... Page not found!"
+    }
+}

@@ -1,13 +1,19 @@
 <nav>
     @for (nav of navs; track nav) {
     <button
-        #navButton
-        (click)="handle(nav.alt, nav.url)"
-        (keydown.enter)="handle(nav.alt, nav.url)"
+        (click)="handle(nav.url)"
         aria-label="{{ nav.alt }}"
         id="{{ nav.alt }}">
         <img [src]="nav.icon" [alt]="" />
-        <span [textContent]="nav.label"></span>
+        <span>{{ nav.labelKey | translate }}</span>
     </button>
     }
+    <div class="nav-divider"></div>
+    <button
+        class="lang-switch"
+        (click)="toggleLang()"
+        (keydown.enter)="toggleLang()"
+        [attr.aria-label]="'nav.lang' | translate">
+        {{ translate.currentLang() === "fr" ? "EN" : "FR" }}
+    </button>
 </nav>

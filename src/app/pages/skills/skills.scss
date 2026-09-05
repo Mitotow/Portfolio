@@ -2,57 +2,121 @@
 
 .page {
     @include OnePage();
-    @include loader();
     @include centeredContainer();
 
     .element {
         display: flex;
         flex-flow: column nowrap;
+        align-items: center;
 
         @include PageTitle();
 
-        .container {
+        .skills-cloud {
             width: 100%;
+            max-width: 900px;
             display: flex;
-            flex-flow: row wrap;
-
-            justify-content: space-around;
+            flex-flow: column nowrap;
+            align-items: center;
             gap: 20px;
+            padding: 20px 0;
 
-            &--wiuse {
+            .skills-group {
                 display: flex;
                 flex-flow: column nowrap;
-                width: fit-content;
-                min-width: 300px;
-                gap: 2vh;
+                align-items: center;
+                gap: 35px;
 
-                padding: 20px;
-                border-radius: 20px;
+                &-title {
+                    position: relative;
+                    padding-bottom: 12px;
+                    color: $light-blue;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        bottom: 0;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        width: 40px;
+                        height: 2px;
+                        background-color: $light-blue;
+                    }
+                }
+            }
+
+            .skills-row {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .skills-separator {
+                width: 80%;
+                max-width: 500px;
+                height: 1px;
+                background: rgba($color: $mint-green, $alpha: 0.2);
+            }
+
+            .skill-orb {
+                position: relative;
+                width: 80px;
+                height: 80px;
+                flex-shrink: 0;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                border-radius: 50%;
+                background-color: rgba($color: $federal-blue, $alpha: 0.5);
+                border: 2px solid $mint-green;
 
                 transform: scale(0);
+                // floatBob only starts once this item's own growIn entrance has
+                // fully played out, so the two animations never fight over the
+                // same `transform` property at the same time.
+                animation:
+                    growIn 0.6s ease forwards,
+                    floatBob 3s ease-in-out infinite;
+                animation-delay:
+                    calc(var(--i) * 0.08s),
+                    calc(var(--i) * 0.08s + 0.6s);
 
-                background-color: rgba($color: $federal-blue, $alpha: 0.5);
-                animation: growIn 1s ease-in-out forwards;
+                transition: transform ease-in-out 200ms;
 
-                h3 {
-                    align-self: center;
+                i {
+                    font-size: 32px;
                 }
 
-                &--use {
-                    display: flex;
-                    flex-flow: row wrap;
-                    gap: 1vw;
-                    i {
-                        font-size: 30px;
+                &:hover {
+                    cursor: default;
+                    transform: scale(1.15);
+                    animation-play-state: paused, paused;
+
+                    .skill-orb-tooltip {
+                        opacity: 1;
                     }
-                    span {
-                        font-size: 20px;
-                    }
-                    &--sep {
-                        height: 100%;
-                        width: 2px;
-                        background: rgba($color: $light-blue, $alpha: 0.5);
-                    }
+                }
+
+                &-tooltip {
+                    position: absolute;
+                    top: -10px;
+                    left: 50%;
+                    padding: 6px 10px;
+
+                    font-size: 14px;
+                    white-space: nowrap;
+                    color: $mint-green;
+
+                    border-radius: 10px;
+                    background-color: rgba($color: $marian-blue, $alpha: 0.9);
+
+                    opacity: 0;
+                    transform: translate(-50%, -100%);
+                    transition: opacity ease-in-out 200ms;
+                    pointer-events: none;
                 }
             }
         }

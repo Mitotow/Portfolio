@@ -1,6 +1,8 @@
+import { Injectable } from "@angular/core";
 import { constants } from "src/constants";
 
-export default class LinksUtils {
+@Injectable({ providedIn: "root" })
+export class LinksUtils {
     openGithub() {
         this.open(constants.GITHUB_URL);
     }

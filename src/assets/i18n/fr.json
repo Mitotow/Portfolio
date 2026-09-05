@@ -1,0 +1,45 @@
+{
+    "nav": {
+        "home": "Accueil",
+        "experience": "Expérience",
+        "skills": "Compétences",
+        "projects": "Projets",
+        "contact": "Contact",
+        "lang": "Passer en anglais"
+    },
+    "home": {
+        "welcome": "Bienvenue sur mon portfolio !",
+        "tagline": "Étudiant ingénieur spécialisé en <span>Cybersécurité</span>",
+        "githubAria": "Mon profil GitHub",
+        "linkedinAria": "Mon profil LinkedIn"
+    },
+    "projects": {
+        "title": "Mes Projets",
+        "sourceAria": "Accéder aux sources",
+        "deploymentAria": "Accéder au site",
+        "emptyTitle": "Aïe, je n'ai pas réussi à récupérer la liste des projets…",
+        "emptyMessage": "Je vous laisse aller voir directement mon"
+    },
+    "skills": {
+        "title": "Mes Compétences",
+        "languages": "Langages",
+        "tools": "Outils",
+        "frameworks": "Frameworks",
+        "emptyTitle": "Aïe, je n'ai pas réussi à récupérer la liste des compétences…",
+        "emptyMessage": "Je vous laisse aller voir directement mon"
+    },
+    "contact": {
+        "title": "Contactez-moi !",
+        "emailLabel": "Email :",
+        "copyPrompt": "Cliquez pour copier",
+        "copied": "Copié !"
+    },
+    "experience": {
+        "title": "Mon Parcours",
+        "bio": "Du bac STI2D à l'école d'ingénieurs, chaque étape a ajouté une couche : les bases du développement et de l'électronique, puis le cycle de vie logiciel complet, et aujourd'hui de l'embarqué et de la cybersécurité. En parallèle, l'alternance chez CGI me confronte à la réalité : des applications Java utilisées quotidiennement par les équipes du groupe La Poste.",
+        "workTitle": "Expérience professionnelle"
+    },
+    "notfound": {
+        "message": "- Oupsss... Page introuvable !"
+    }
+}

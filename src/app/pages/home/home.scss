@@ -64,15 +64,17 @@
             font-weight: 500;
 
             span {
-                color: $marian-blue;
+                color: $accent;
+                font-weight: 600;
             }
         }
 
         &-buttons {
-            width: 40%;
             display: flex;
             flex-flow: row nowrap;
-            justify-content: space-around;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
 
             button {
                 display: flex;

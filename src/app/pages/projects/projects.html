@@ -1,45 +1,55 @@
 <div class="page">
-    <h1>Mes Projets</h1>
-    @if (loading) {
+    <h1>{{ "projects.title" | translate }}</h1>
+    @if (projects.length === 0) {
     <div class="centered-container">
-        <div class="loader"></div>
+        <h2>{{ "projects.emptyTitle" | translate }}</h2>
+        <h3>
+            {{ "projects.emptyMessage" | translate }}
+            <button (click)="linksUtils.openGithub()">GitHub</button>
+        </h3>
     </div>
-    } @else if (projects.length !== 0) {
+    } @else {
     <div class="projects">
         @for (p of projects; track p) {
         <div
             class="projects-project"
-            [ngStyle]="{
-                            'animation-delay': projects.indexOf(p) * 0.25 + 's',
-                        }">
-            <div class="projects-project-header">
-                <div class="projects-project-header-text">
-                    <h2>{{ p.title }}</h2>
-                    <h3>{{ p.subtitle }}</h3>
-                </div>
-                <button
-                    (click)="openSource(p.git)"
-                    (keydown.enter)="openSource(p.git)"
-                    aria-label="Accéder aux sources">
-                    <img src="/assets/projects/source.svg" alt="" />
-                </button>
+            animate.enter="projects-project--enter"
+            [style.--enter-index]="$index">
+            <div class="projects-project-image">
+                <img
+                    [src]="p.image ?? '/assets/projects/placeholder.svg'"
+                    [alt]="p.title" />
             </div>
-            <p [textContent]="p.text"></p>
-            <div class="projects-project-utils">
-                @for (util of p.used; track util) {
-                <span [textContent]="util"></span>
-                }
+            <div class="projects-project-body">
+                <div class="projects-project-header">
+                    <div class="projects-project-header-text">
+                        <h2>{{ p.title }}</h2>
+                        <h3>{{ text(p.subtitle) }}</h3>
+                    </div>
+                    <button
+                        (click)="openSource(p.git)"
+                        (keydown.enter)="openSource(p.git)"
+                        [attr.aria-label]="'projects.sourceAria' | translate">
+                        <img src="/assets/projects/source.svg" alt="" />
+                    </button>
+                    @if (p.deployment) {
+                    <button
+                        (click)="openSource(p.deployment)"
+                        (keydown.enter)="openSource(p.deployment)"
+                        [attr.aria-label]="'projects.deploymentAria' | translate">
+                        <img src="/assets/projects/web.svg" alt="" />
+                    </button>
+                    }
+                </div>
+                <p [textContent]="text(p.text)"></p>
+                <div class="projects-project-utils">
+                    @for (util of p.used; track util) {
+                    <span [textContent]="util"></span>
+                    }
+                </div>
             </div>
         </div>
         }
-    </div>
-    } @else {
-    <div class="centered-container">
-        <h2>Aïe, je n'ai pas réussi à récupérer la liste des projets ...</h2>
-        <h3>
-            Je vous laisse aller voir directement mon
-            <button (click)="linksUtils.openGithub()">Github</button>
-        </h3>
     </div>
     }
 </div>

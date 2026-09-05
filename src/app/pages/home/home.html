@@ -11,22 +11,19 @@
             alt="Picture of Thomas AMBROISE"
             priority />
         <h1>Thomas AMBROISE</h1>
-        <h2>Bienvenue sur mon portfolio !</h2>
-        <h3>
-            Étudiant en <span>BUT Informatique</span> et
-            <span>Développeur</span>
-        </h3>
+        <h2>{{ "home.welcome" | translate }}</h2>
+        <h3 [innerHTML]="'home.tagline' | translate"></h3>
         <div class="container-buttons">
             <button
                 (click)="linksUtils.openGithub()"
                 (keydown.enter)="linksUtils.openGithub()"
-                aria-label="Mon profil GitHub">
+                [attr.aria-label]="'home.githubAria' | translate">
                 <i class="devicon-github-original" aria-hidden="true"></i>
             </button>
             <button
                 (click)="linksUtils.openLinkedin()"
                 (keydown.enter)="linksUtils.openLinkedin()"
-                aria-label="Mon profil Linkedin">
+                [attr.aria-label]="'home.linkedinAria' | translate">
                 <i class="devicon-linkedin-plain" aria-hidden="true"></i>
             </button>
         </div>

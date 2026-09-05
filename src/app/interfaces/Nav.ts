@@ -1,5 +1,5 @@
 export default interface Nav {
-    label: string;
+    labelKey: string;
     url: string;
     icon: string;
     alt: string;

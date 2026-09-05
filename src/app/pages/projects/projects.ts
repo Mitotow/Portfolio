@@ -1,41 +1,25 @@
-import { Component, inject, OnInit } from "@angular/core";
-import Project from "src/interfaces/Project";
-import { NgStyle } from "@angular/common";
-import LinksUtils from "src/utils/LinksUtils";
-import { DataStore } from "src/stores/ProjectsStore";
+import { Component, inject, ChangeDetectionStrategy } from "@angular/core";
+import { TranslatePipe, TranslateService } from "@ngx-translate/core";
+import { LinksUtils } from "src/app/utils/LinksUtils";
+import { PROJECTS } from "src/app/data/projects.data";
+import { translateLocalizedText } from "src/app/utils/translateUtils";
+import LocalizedText from "src/app/interfaces/LocalizedText";
 
 @Component({
     selector: "app-projects-page",
     standalone: true,
     templateUrl: "./projects.html",
     styleUrls: ["./projects.scss"],
-    imports: [NgStyle],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [TranslatePipe],
 })
-export class ProjectsPageComponent implements OnInit {
-    private dataStore = inject(DataStore);
-    linksUtils!: LinksUtils;
-    loading = true;
-    projects: Project[] = [];
-
-    ngOnInit() {
-        this.fetchProjects();
-        this.linksUtils = new LinksUtils();
-    }
-
-    fetchProjects() {
-        this.dataStore.getProjects().subscribe({
-            next: (res) => {
-                if (res.status == 200 && res.body !== null) {
-                    this.projects = res.body;
-                }
-
-                this.loading = false;
-            },
-            error: () => {
-                this.loading = false;
-            },
-        });
-    }
+export class ProjectsPageComponent {
+    linksUtils = inject(LinksUtils);
+    translate = inject(TranslateService);
+    projects = PROJECTS;
 
     openSource = (url: string) => window.open(url, "_blank");
+
+    text = (value: LocalizedText) =>
+        translateLocalizedText(this.translate, value);
 }

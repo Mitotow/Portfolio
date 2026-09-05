@@ -1,9 +1,19 @@
 @use "../../../styles.scss" as *;
 
+@keyframes projectsCardEnter {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 .page {
     @include OnePage();
     @include PageTitle();
-    @include loader();
     @include centeredContainer();
 
     .projects {
@@ -14,28 +24,49 @@
 
         &-project {
             cursor: default;
-            width: 400px;
+            width: min(400px, 100%);
 
             display: flex;
             flex-flow: column nowrap;
-            justify-content: space-between;
 
-            padding: 20px;
             background-color: rgba($color: $federal-blue, $alpha: 0.5);
             border-radius: 20px;
+            overflow: hidden;
 
-            transform: scale(0);
-            animation: growIn 1s forwards;
+            &-image {
+                width: 100%;
+                aspect-ratio: 16 / 9;
+                overflow: hidden;
 
-            gap: 1vh;
+                img {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            &-body {
+                flex: 1;
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: space-between;
+                gap: 1vh;
+                padding: 20px;
+            }
 
             &-header {
                 display: flex;
                 flex-flow: row nowrap;
-                justify-content: space-between;
+                justify-content: flex-start;
                 align-items: flex-start;
+                gap: 10px;
 
                 &-text {
+                    // Absorbs the free space so the buttons stay grouped on
+                    // the right instead of being spread apart.
+                    flex: 1;
+
                     h2 {
                         font-weight: 600;
                     }
@@ -44,6 +75,8 @@
                     }
                 }
                 button {
+                    flex: 0 0 auto;
+                    padding: 0;
                     background-color: transparent;
                     border: none;
                     outline: none;
@@ -76,12 +109,20 @@
                     border-radius: 10px;
                 }
             }
+
+            // Applied by `animate.enter` on each card and removed once the
+            // animation ends. `both` holds the from-state through the
+            // per-card delay, which is what `stagger()` used to do.
+            &--enter {
+                animation: projectsCardEnter 1s ease both;
+                animation-delay: calc(var(--enter-index, 0) * 250ms);
+            }
         }
     }
 }
 
 @media (max-width: 850px) {
-    .page .projects-project {
+    .page .projects-project-body {
         gap: 1vh;
     }
 }

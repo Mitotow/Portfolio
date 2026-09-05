@@ -1,0 +1,198 @@
+@use "../../../styles.scss" as *;
+
+.page {
+    @include OnePage();
+    @include PageTitle();
+
+    .bio {
+        max-width: 800px;
+        margin: 0 auto 30px;
+        text-align: center;
+        color: $light-blue;
+    }
+
+    .timeline {
+        position: relative;
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 40px;
+        max-width: 800px;
+        margin: 0 auto;
+        padding-left: 40px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 9px;
+            top: 10px;
+            bottom: 10px;
+            width: 2px;
+            background: rgba($color: $mint-green, $alpha: 0.3);
+        }
+
+        &-step {
+            position: relative;
+
+            &-dot {
+                position: absolute;
+                left: -40px;
+                top: 6px;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background-color: $dark-purple;
+                border: 3px solid $mint-green;
+            }
+
+            &-content {
+                display: flex;
+                flex-flow: row nowrap;
+                align-items: center;
+                gap: 25px;
+
+                background-color: rgba($color: $federal-blue, $alpha: 0.5);
+                border-radius: 20px;
+                padding: 25px;
+            }
+
+            &-text {
+                flex: 1;
+                min-width: 0;
+            }
+
+            &-image {
+                flex: 0 0 140px;
+                width: 140px;
+                height: 140px;
+                border-radius: 16px;
+                overflow: hidden;
+
+                img {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            h2 {
+                font-weight: 600;
+            }
+
+            h3 {
+                color: $marian-blue;
+                margin-bottom: 10px;
+            }
+
+            &-period {
+                display: inline-block;
+                margin-bottom: 6px;
+                font-size: 14px;
+                color: $light-blue;
+            }
+        }
+    }
+
+    .section-separator {
+        width: 100%;
+        max-width: 800px;
+        height: 1px;
+        margin: 50px auto 30px;
+        background: rgba($color: $mint-green, $alpha: 0.3);
+    }
+
+    .section-title {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .work-list {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 30px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .work-card {
+        display: flex;
+        flex-flow: row nowrap;
+
+        background-color: rgba($color: $federal-blue, $alpha: 0.5);
+        border-radius: 20px;
+        overflow: hidden;
+
+        &-image {
+            flex: 0 0 220px;
+            padding: 20px;
+
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                // Company logos must keep their exact proportions, so the whole
+                // mark is scaled down to fit the box. Never `cover` here: it
+                // crops a wide logo instead of fitting it.
+                object-fit: contain;
+            }
+        }
+
+        &-body {
+            flex: 1;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            gap: 6px;
+            padding: 20px;
+
+            h3 {
+                font-weight: 600;
+            }
+
+            h4 {
+                color: $light-blue;
+                font-weight: 500;
+                font-size: 15px;
+            }
+        }
+    }
+
+    @media (max-width: 700px) {
+        .timeline {
+            padding-left: 26px;
+
+            &::before {
+                left: 5px;
+            }
+
+            &-step-dot {
+                left: -26px;
+                width: 16px;
+                height: 16px;
+            }
+
+            &-step-content {
+                flex-flow: column-reverse nowrap;
+                gap: 15px;
+                padding: 20px;
+            }
+
+            &-step-image {
+                flex: none;
+                width: 100%;
+                height: 160px;
+            }
+        }
+    }
+
+    @media (max-width: 600px) {
+        .work-card {
+            flex-flow: column nowrap;
+
+            &-image {
+                flex: none;
+                height: 180px;
+            }
+        }
+    }
+}
