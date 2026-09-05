@@ -17,6 +17,20 @@ export const PROJECTS: Project[] = [
         image: "/assets/projects/m8dle.png",
     },
     {
+        title: "MitoBoat",
+        subtitle: {
+            fr: "ChatBot Twitch",
+            en: "ChatBot Twitch",
+        },
+        text: {
+            fr: "Bot simple permettant la création de commande par streamer avec la gestion du chat IRC ainsi que d'intéragir avec la chaîne directement via l'API Helix de twitch. Au départ, ce projet était juste prévu pour apprendre la gestion d'un chat IRC twitch en go pour rafraîchir mes connaissances sur ce langage de programmation. Finalement, je m'en suis servi comme base pour apprendre à manipuler l'IA Claude avec Claude Code intégré à NeoVim, j'ai donc intégré à mon workflow de développement Claude qui m'assure des tests unitaires ainsi qu'une architecture optimale pour mes besoins.",
+            en: "PLACEHOLDER",
+        },
+        git: "https://github.com/Mitotow/MitoBoat",
+        used: ["Go", "Twitch"],
+        image: "/assets/projects/twitch.jpg",
+    },
+    {
         title: "Les 3 Moustiquaires",
         subtitle: {
             fr: "Site internet E-commerce",
@@ -70,6 +84,7 @@ export const PROJECTS: Project[] = [
         },
         git: "https://github.com/Mitotow/HardcoreRedemption",
         used: ["Java", "Spigot"],
+        image: "/assets/projects/spigot.png",
     },
     {
         title: "Particles",
