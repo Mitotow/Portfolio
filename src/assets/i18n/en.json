@@ -16,7 +16,8 @@
     "projects": {
         "title": "My Projects",
         "sourceAria": "View source",
-        "emptyTitle": "Oops, I couldn't fetch the project list ...",
+        "deploymentAria": "Visit website",
+        "emptyTitle": "Oops, I couldn't fetch the project list…",
         "emptyMessage": "I'll let you check out my"
     },
     "skills": {
@@ -24,7 +25,7 @@
         "languages": "Languages",
         "tools": "Tools",
         "frameworks": "Frameworks",
-        "emptyTitle": "Oops, I couldn't fetch the skill list ...",
+        "emptyTitle": "Oops, I couldn't fetch the skills list…",
         "emptyMessage": "I'll let you check out my"
     },
     "contact": {
@@ -35,7 +36,7 @@
     },
     "experience": {
         "title": "My Background",
-        "bio": "PLACEHOLDER — short presentation of yourself: who you are, what you're passionate about, what you're looking for. Replace it in src/assets/i18n/en.json.",
+        "bio": "From an STI2D baccalaureate to engineering school, every step added a layer: the foundations of development and electronics, then the full software lifecycle, and today embedded systems and cybersecurity. Alongside that, my work-study contract at CGI confronts me with the real world: Java applications used daily by the teams of the La Poste group.",
         "workTitle": "Professional Experience"
     },
     "notfound": {

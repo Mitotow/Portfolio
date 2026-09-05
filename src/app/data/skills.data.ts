@@ -9,7 +9,7 @@ export const SKILLS: SkillElement[] = [
   { name: "Git", type: SkillType.TOOL, iconClass: "devicon-git-plain" },
   { name: "Docker", type: SkillType.TOOL, iconClass: "devicon-docker-plain" },
   { name: "VS Code", type: SkillType.TOOL, iconClass: "devicon-vscode-plain" },
-  { name: "NeoVim", type: SkillType.TOOL, iconClass: "devicon-neovim-plain" },
+  { name: "Neovim", type: SkillType.TOOL, iconClass: "devicon-neovim-plain" },
   { name: "Angular", type: SkillType.FRAMEWORK, iconClass: "devicon-angularjs-plain" },
   { name: "React", type: SkillType.FRAMEWORK, iconClass: "devicon-react-original" },
   { name: "Spring Boot", type: SkillType.FRAMEWORK, iconClass: "devicon-spring-original" }

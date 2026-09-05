@@ -13,7 +13,7 @@ export const PROJECTS: Project[] = [
         },
         git: "https://github.com/Swaannnn/M8DLE",
         deployment: "https://m8dle.com",
-        used: ["NextJS", "Postgresql", "Vercel"],
+        used: ["Next.js", "PostgreSQL", "Vercel"],
         image: "/assets/projects/m8dle.png",
     },
     {
@@ -23,8 +23,8 @@ export const PROJECTS: Project[] = [
             en: "Twitch ChatBot",
         },
         text: {
-            fr: "Bot simple permettant la création de commandes par les streamers, avec la gestion du chat IRC ainsi que la possibilité d'interagir avec la chaîne directement via l'API Helix de Twitch. Au départ, ce projet était juste prévu pour apprendre la gestion d'un chat IRC Twitch en Go et rafraîchir mes connaissances sur ce langage de programmation. Finalement, je m'en suis servi comme base pour apprendre à manipuler l'IA Claude avec Claude Code intégré à NeoVim. J'ai donc intégré Claude à mon workflow de développement, ce qui m'assure des tests unitaires ainsi qu'une architecture optimale pour mes besoins.",
-            en: "A simple bot that lets streamers create their own commands, handling the IRC chat as well as interacting with the channel directly through Twitch's Helix API. At first, this project was only meant to teach me how to handle a Twitch IRC chat in Go and to refresh my knowledge of that programming language. In the end, I used it as a base to learn how to work with Claude through Claude Code integrated into NeoVim. I therefore added Claude to my development workflow, which guarantees me unit tests as well as an architecture that fits my needs.",
+            fr: "Bot simple permettant la création de commandes par les streamers, avec la gestion du chat IRC ainsi que la possibilité d'interagir avec la chaîne directement via l'API Helix de Twitch. Au départ, ce projet était juste prévu pour apprendre la gestion d'un chat IRC Twitch en Go et rafraîchir mes connaissances sur ce langage de programmation. Finalement, je m'en suis servi comme base pour apprendre à manipuler l'IA Claude avec Claude Code intégré à Neovim. J'ai donc intégré Claude à mon workflow de développement, ce qui m'assure des tests unitaires ainsi qu'une architecture optimale pour mes besoins.",
+            en: "A simple bot that lets streamers create their own commands, handling the IRC chat as well as interacting with the channel directly through Twitch's Helix API. At first, this project was only meant to teach me how to handle a Twitch IRC chat in Go and to refresh my knowledge of that programming language. In the end, I used it as a base to learn how to work with Claude through Claude Code integrated into Neovim. I therefore added Claude to my development workflow, which guarantees me unit tests as well as an architecture that fits my needs.",
         },
         git: "https://github.com/Mitotow/MitoBoat",
         used: ["Go", "Twitch"],
